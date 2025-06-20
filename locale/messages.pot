@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: \n"
+
+# Menús
+msgid "🏠 Main Menu"
+msgstr ""
+
+msgid "🛠 Tools"
+msgstr ""
+
+msgid "saludar"
+msgstr ""
+
+msgid "salir"
+msgstr ""
+
+msgid "detector"
+msgstr ""
+
+msgid "detec_info"
+msgstr ""
+
+msgid "volver"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+# Prompts
+msgid "elección_entra"
+msgstr ""
+
+msgid "ruta_entra"
+msgstr ""
+
+msgid "bytes_entra"
+msgstr ""
+
+# Mensajes comunes
+msgid "error_vacio"
+msgstr ""
+
+msgid "error_no_valido"
+msgstr ""
+
+msgid "saluda_usuario"
+msgstr ""
+
+msgid "volver_linea"
+msgstr ""
+
+msgid "salir"
+msgstr ""
+
+msgid "detector_detectando"
+msgstr ""
+
+msgid "✅ Detection result:"
+msgstr ""
+
+msgid "detector_falla"
+msgstr ""
+
+msgid "detector_error_lee"
+msgstr ""
+
+msgid "detector_no_ruta"
+msgstr ""
+
+msgid "logger_menu_ele"
+msgstr ""
+
+msgid "logger_cierre_inesp"
+msgstr ""
+
+msgid "logger_error_entra"
+msgstr ""
+
+msgid "logger_error_eje_com"
+msgstr ""
+
+msgid "logger_error_inesp"
+msgstr ""
+
+msgid "desconocido"
+msgstr ""
+
+msgid "→"
+msgstr ""

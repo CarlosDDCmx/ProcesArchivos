@@ -1,107 +1,113 @@
-# 🔍 Detector de Tipo de Archivo
-
+# 🧠 Detector de Tipo de Archivo CLI
 [Español](/README.md) | [English](/README/en.md) |
 
-Una herramienta CLI en Python que identifica el tipo de archivo basado en su encabezado binario (magic numbers). Compatible con múltiples formatos, internacionalización (i18n), registro de logs y verbosidad configurable.
+[![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3130/)
+[![Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)](#)
+[![Licencia](https://img.shields.io/badge/licencia-MIT-green)](LICENSE)
+[![Compatibilidad](https://img.shields.io/badge/i18n-es%2Fen-lightgrey)](#)
 
+Aplicación CLI modular e internacionalizada para detectar tipos de archivo mediante la lectura de encabezados binarios.
 ---
 
 ## 🚀 Características
 
-- Detecta tipos de archivo leyendo los bytes del encabezado
-- Soporta múltiples formatos (PDF, PNG, DOCX, XLSX, etc.)
-- Soporte multilingüe
-- Registro configurable (nivel de log y ruta)
-- Códigos de salida claros para automatización
+- 🔍 Detección precisa del tipo de archivo a partir de su cabecera.
+- 🌐 Soporte multiidioma.
+- 🧩 Arquitectura extensible basada en menús.
+- 🧪 CLI interactiva fácil de usar y ampliar.
 
 ---
 
-## 📦 Instalación
+## 📌 Dependencias
 
-```bash
-git clone https://github.com/CarlosDDCmx/ProcesArchivos.git
-cd file-detector
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-````
-
-> Requiere Python 3.10 o superior
-
----
-
-## 🔧 Uso
-
-```bash
-python cli/main.py <ruta_al_archivo> [opciones]
-```
-
-### ✅ Ejemplo
-
-```bash
-python cli/main.py ./samples/prueba.docx --bytes 32 --log-level DEBUG --enable-logging --lang es
-```
-
----
-
-## ⚙️ Opciones
-
-| Opción              | Descripción                                                 |
-| ------------------- | ----------------------------------------------------------- |
-| `<archivo>`         | Ruta del archivo a analizar                                 |
-| `--bytes <n>`       | Número de bytes del encabezado a leer (por defecto: 64)     |
-| `--log-level`       | Nivel de registro (DEBUG, INFO, WARNING, ERROR, CRITICAL)   |
-| `--enable-logging`  | Guarda un log en archivo (se crea automáticamente `.logs/`) |
-| `--log-file <ruta>` | Ruta personalizada para guardar el log                      |
-| `--lang <código>`   | Idioma para los mensajes (`en`, `es`)                       |
-| `--quiet`           | Suprime los mensajes en la terminal (ideal para scripts)    |
-
----
-
-## 🌐 Internacionalización (i18n)
-
-Idiomas soportados:
-
-* `en` – Inglés
-* `es` – Español
-
-```bash
-python cli/main.py archivo.docx --lang es
-```
-
-Para agregar un nuevo idioma:
-
-1. Crea un archivo en `core/i18n/lang/` llamado `<codigo>.json`
-2. Usa como base el contenido de `es.json`
-3. Ejecuta el programa con `--lang <codigo>`
-
----
-
-## 📤 Códigos de salida
-
-| Código | Significado                             |
-| ------ | --------------------------------------- |
-| 0      | Tipo de archivo detectado correctamente |
-| 1      | Tipo de archivo desconocido             |
-| 2      | Ocurrió un error                        |
+* Python 3.13+
+* Librerías estándar (no necesita dependencias externas).
+* `gettext` para internacionalización.
 
 ---
 
 ## 📁 Estructura del Proyecto
 
 ```
-.
-├── cli/
-│   └── main.py          # Interfaz CLI
-├── core/
-│   ├── detector.py      # Lógica de detección
-│   ├── reader.py        # Lector de encabezado
-│   ├── logger.py        # Utilidad de logs
-│   └── i18n.py          # Soporte de idiomas
-├── data/
-│   └── signatures.json  # Archivo de firmas de encabezado
-├── i18n/                # Carpeta con archivos (json) para cada idioma
-├── .logs/               # Carpeta para logs (se crea automáticamente)
+
+procesArchivos/
+├── core/                 # Punto de entrada
+│   └── main.py
+├── menu/                 # Sistema de menús
+│   ├── menu.py
+│   ├── navigator.py
+│   ├── commands/
+│   └── menus/
+├── detector/             # Lógica de detección
+│   ├── analyzer.py
+│   ├── detector.py
+│   ├── loader.py
+│   ├── report.py
+│   └── signatures.json
+├── utils/                # Utilidades generales
+│   ├── i18n/             # Para internacionalización
+│   └── logger/           # Para depuración y registros
+├── locale/               # Archivos para cada idiomas
+│   └── es/LC/_MESSAGES/messages.mo
+└── README.md
+
+````
+
+---
+
+## ⚙️ Requisitos
+
+- Python 3.13 o superior
+- Solo bibliotecas estándar (`gettext`, `os`, `mimetypes`, etc.)
+
+---
+
+## 🧪 Ejecución
+
+Sigue las instrucciones del menú interactivo:
+
+```
+0. 🚪 Salir
+1. 🛠 Herramientas
+2. 👋 Saludar
 ```
 
 ---
+
+## 🧠 Ejemplo de Detección
+
+```text
+📄 Introduce la ruta al archivo: ejemplo.pdf
+🔢 ¿Cuántos bytes del encabezado deseas leer? (por defecto: 8): 16
+
+✅ Resultado de la detección:
+path: ejemplo.pdf
+size: 19345
+header: 255044462d312e350a25d0d4c5d8
+header_bytes: 16
+extension: .pdf
+mime_type: application/pdf
+detected_type: Documento PDF
+```
+
+---
+
+## 🌍 Internacionalización (i18n)
+
+Este proyecto utiliza `gettext`. Para cambiar el idioma:
+
+```bash
+# Windows
+set LANG=es_MX.UTF-8
+
+# Linux/macOS
+export LANG=es_MX.UTF-8
+```
+
+Para agregar nuevos idiomas:
+
+```bash
+pygettext -d messages -o locales/fr/LC_MESSAGES/messages.po utils/i18n.py
+# Traducir el archivo .po
+msgfmt locales/fr/LC_MESSAGES/messages.po -o locales/fr/LC_MESSAGES/messages.mo
+```

@@ -1,0 +1,147 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+# Menús
+msgid "menu_prin"
+msgstr "🏠 Main Menu"
+
+msgid "herramientas"
+msgstr "🛠 Tools"
+
+msgid "saludar"
+msgstr "👋 Greet"
+
+msgid "salir"
+msgstr "🚪 Exit"
+
+msgid "detector"
+msgstr "🔎 Detectors"
+
+msgid "detec_info"
+msgstr "Detect file format from the header"
+
+msgid "volver"
+msgstr "🔙 Back"
+
+# Prompts
+msgid "eleccion_entra"
+msgstr "➡️  Enter your choice: "
+
+msgid "ruta_entra"
+msgstr "📄 Enter the file path: "
+
+msgid "bytes_entra"
+msgstr "🔢 How many header bytes do you want to read? (default: 8): "
+
+msgid "error_menu_const"
+msgstr "❌ Error building menu: {error}"
+
+msgid "error_menu_go_to"
+msgstr "❌ Invalid menu passed to go_to"
+
+msgid "error_menu_display"
+msgstr "❌ No menu to display"
+
+msgid "→"
+msgstr "→"
+
+msgid "error_bytes_tipo"
+msgstr "❌ The number of bytes must be a positive integer."
+
+msgid "result_detector"
+msgstr "✅ Detection results:"
+
+# Mensajes comunes
+msgid "error_vacio"
+msgstr "❌ No value entered. Please try again."
+
+msgid "error_no_valido"
+msgstr "❌ Invalid option. Please try again."
+
+msgid "saluda_usuario"
+msgstr "👋 Hello, user!"
+
+msgid "volver_linea"
+msgstr "Back"
+
+msgid "salir_linea"
+msgstr "Exit"
+
+# Detector
+msgid "detector_detectando"
+msgstr "🛠 Detecting file format..."
+
+msgid "detector_resultado"
+msgstr "✅ Detection result:"
+
+msgid "error_firmas_carga"
+msgstr "⚠️ Couldn't load signature file: {error}"
+
+msgid "detector_falla"
+msgstr "❌ Error detecting file type: {error}"
+
+msgid "detector_error_lee"
+msgstr "❌ Error reading file: {error}"
+
+# Mensajes logger
+msgid "detector_no_ruta"
+msgstr "⚠️ No file path provided."
+
+msgid "logger_menu_ele"
+msgstr "💡 User selected: {choice} in menu {menu}"
+
+msgid "logger_cierre_inesp"
+msgstr "⚠️ Input closed unexpectedly."
+
+msgid "logger_error_entra"
+msgstr "❌ Unexpected error receiving input: {error}"
+
+msgid "logger_error_eje_com"
+msgstr "❌ Error executing command: {error}"
+
+msgid "logger_error_crea_dir"
+msgstr "❌ Could not create logs directory: {error}"
+
+msgid "logger_error_inesp"
+msgstr "⚠️ An unhandled exception occurred"
+
+msgid "inicio_app"
+msgstr "✅ Application started"
+
+msgid "verbose_hab"
+msgstr "🔍 Verbose mode enabled"
+
+msgid "ruta_logs_msj"
+msgstr "📁 Logs are being saved to: {path}"
+
+# Mensajes logger: reporte
+msgid "reporte_ruta"
+msgstr "📝 File analyzed: {path}"
+
+msgid "reporte_bytes"
+msgstr "📦 Size (bytes): {size}"
+
+msgid "reporte_b_leido"
+msgstr "📦 Bytes read: {header_bytes}"
+
+msgid "reporte_encabezado"
+msgstr "🔍 Header (hex): {header}"
+
+msgid "reporte_extension"
+msgstr "📂 Extension: {extension}"
+
+msgid "reporte_MIME"
+msgstr "📑 MIME Type: {mime_type}"
+
+msgid "reporte_tipo"
+msgstr "📌 Detected type: {detected_type}"
+
+# i18n
+msgid "idioma_estab"
+msgstr "🌐 Language set: {lang}"
+
+# Otros
+msgid "desconocido"
+msgstr "Unknown"

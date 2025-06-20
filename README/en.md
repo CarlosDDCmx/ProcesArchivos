@@ -1,107 +1,114 @@
-# 🔍 File Type Detector
+# 🔍 File Type Detector 🧠 File Type Detector CLI
+
+[![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3130/)
+[![Status](https://img.shields.io/badge/status-in%20development-yellow)](#)  
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)  
+[![i18n Support](https://img.shields.io/badge/i18n-es%2Fen-lightgrey)](#)  
 
 [Español](/README.md) | [English](/README/en.md) |
 
-A Python CLI tool that identifies file types based on their binary header (magic numbers). Supports multiple formats, internationalization (i18n), logging, and configurable verbosity.
-
+A modular and internationalized CLI application to detect file types by reading binary headers.
 ---
 
 ## 🚀 Features
 
-- Detects file types by reading header bytes
-- Supports multiple formats (PDF, PNG, DOCX, XLSX, etc.)
-- Multilingual support
-- Configurable logging (log level and path)
-- Clear exit codes for automation
+- 🔍 Accurate detection of file type from its header.
+- 🌐 Multi-language support.
+- 🧩 Extensible architecture based on menus.
+- 🧪 Interactive and user-friendly CLI that’s easy to extend.
 
 ---
 
-## 📦 Installation
+## 📌 Dependencies
 
-```bash
-git clone https://github.com/CarlosDDCmx/ProcesArchivos.git
-cd ProcesArchivos
-python3 -m venv <project_name>
-source <project_name>/bin/activate
-pip install -r requirements.txt
-```
-
-> Requires Python 3.10 or higher
-
----
-
-## 🔧 Usage
-
-```bash
-python cli/main.py <file_path> [options]
-```
-
-### ✅ Example
-
-```bash
-python cli/main.py ./samples/test.docx --bytes 32 --log-level DEBUG --enable-logging --lang en
-```
-
----
-
-## ⚙️ Options
-
-| Option              | Description                                                 |
-| ------------------- | ----------------------------------------------------------- |
-| `<file>`            | Path to the file to analyze                                 |
-| `--bytes <n>`       | Number of header bytes to read (default: 64)                |
-| `--log-level`       | Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)       |
-| `--enable-logging`  | Save log to file (automatically creates `.logs/`)           |
-| `--log-file <path>` | Custom path to save the log file                            |
-| `--lang <code>`     | Language for messages (`en`, `es`)                          |
-| `--quiet`           | Suppress terminal messages (ideal for scripts)              |
-
----
-
-## 🌐 Internationalization (i18n)
-
-Supported languages:
-
-* `en` – English
-* `es` – Spanish
-
-```bash
-python cli/main.py file.docx --lang en
-```
-
-To add a new language:
-
-1. Create a file in `core/i18n/lang/` named `<code>.json`
-2. Use `es.json` as a base
-3. Run the program with `--lang <code>`
-
----
-
-## 📤 Exit codes
-
-| Code | Meaning                             |
-| ---- | ----------------------------------- |
-| 0    | File type detected successfully     |
-| 1    | Unknown file type                   |
-| 2    | An error occurred                   |
+* Python 3.13+
+* Standard libraries (no external dependencies required).
+* `gettext` for internationalization.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-.
-├── cli/
-│   └── main.py          # CLI interface
-├── core/
-│   ├── detector.py      # Detection logic
-│   ├── reader.py        # Header reader
-│   ├── logger.py        # Log utility
-│   └── i18n.py          # Language support
-├── data/
-│   └── signatures.json  # Header signatures file
-├── i18n/                # Folder with (json) files for each language
-├── .logs/               # Log folder (created automatically)
+
+procesArchivos/
+├── core/                 # Entry point
+│   └── main.py
+├── menu/                 # Menu system
+│   ├── menu.py
+│   ├── navigator.py
+│   ├── commands/
+│   └── menus/
+├── detector/             # Detection logic
+│   ├── analyzer.py
+│   ├── detector.py
+│   ├── loader.py
+│   ├── report.py
+│   └── signatures.json
+├── utils/                # General utilities
+│   ├── i18n/             # For internationalization
+│   └── logger/           # For debugging and logging
+├── locale/               # Language files
+│   └── es/LC/_MESSAGES/messages.mo
+└── README.md
+
+````
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.13 or higher
+- Only standard libraries (`gettext`, `os`, `mimetypes`, etc.)
+
+---
+
+## 🧪 Execution
+
+Follow the interactive menu instructions:
+
+```
+0. 🚪 Exit
+1. 🛠 Tools
+2. 👋 Greet
 ```
 
 ---
+
+## 🧠 Detection Example
+
+```text
+📄 Enter the file path: example.pdf
+🔢 How many header bytes would you like to read? (default: 8): 16
+
+✅ Detection result:
+path: example.pdf
+size: 19345
+header: 255044462d312e350a25d0d4c5d8
+header_bytes: 16
+extension: .pdf
+mime_type: application/pdf
+detected_type: PDF Document
+```
+
+---
+
+## 🌍 Internationalization (i18n)
+
+This project uses `gettext`. To change the language:
+
+```bash
+# Windows
+set LANG=en_US.UTF-8
+
+# Linux/macOS
+export LANG=en_US.UTF-8
+```
+
+To add new languages:
+
+```bash
+pygettext -d messages -o locales/fr/LC_MESSAGES/messages.po utils/i18n.py
+# Translate the .po file
+msgfmt locales/fr/LC_MESSAGES/messages.po -o locales/fr/LC_MESSAGES/messages.mo
+```

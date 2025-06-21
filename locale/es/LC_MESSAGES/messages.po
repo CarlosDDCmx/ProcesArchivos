@@ -148,6 +148,12 @@ msgstr "📑 Tipo MIME: {mime_type}"
 msgid "reporte_tipo"
 msgstr "📌 Tipo detectado: {detected_type}"
 
+msgid "loader_error"
+msgstr "⚠️ No se pudieron cargar las firmas del archivo: {error}"
+
+msgid "reporte_bytes_insuf"
+msgstr "⚠️ Se solicitaron {requested} bytes pero el archivo solo tiene {actual} bytes."
+
 #i18n
 msgid "idioma_estab"
 msgstr "🌐 Idioma establecido: {lang}"

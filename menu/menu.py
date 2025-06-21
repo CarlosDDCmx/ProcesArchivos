@@ -1,15 +1,6 @@
 import logging
 from utils.i18n.safe import safe_gettext as _
-
-BANNER = r"""
-    ╔══════════════════════════════════════════════════════════════╗
-    ║                        ProcesArchivos                        ║
-    ║                                                              ║
-    ║              Procesador de Archivos Multi-formato            ║
-    ║                        Versión 1.0.0                         ║
-    ║                     Carlos D. Díaz Cano                      ║
-    ╚══════════════════════════════════════════════════════════════╝
-"""
+from utils.static.menu import MENU_BANNER
 
 class Menu:
     def __init__(self, title="Menu"):
@@ -36,7 +27,7 @@ class Menu:
 
     def show(self, navigator):
         while True:
-            print(BANNER)
+            print(MENU_BANNER)
             self.display()
             choice = self.get_choice()
 

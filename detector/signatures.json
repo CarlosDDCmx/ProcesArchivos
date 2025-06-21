@@ -1,10 +1,73 @@
 {
-  "504B0304": "ZIP archive (DOCX/XLSX/ODT/ODS)",
-  "D0CF11E0": "Microsoft Office Binary (DOC/XLS)",
-  "25504446": "PDF document",
-  "FFD8FFE0": "JPEG image",
-  "FFD8FFE1": "JPEG image",
-  "89504E47": "PNG image",
-  "00000018": "MP4 video",
-  "49443303": "MP3 audio"
+  "signatures": {
+    "504b0304": "ZIP / DOCX / XLSX / PPTX",
+    "504b0506": "ZIP (empty)",
+    "504b0708": "ZIP (spanned)",
+    "52617221": "RAR (v1.5)",
+    "1f8b08": "GZIP",
+    "377abcaf271c": "7-Zip",
+    "4344303031": "ISO (CD001)",
+    "4d5a": "Windows Executable (EXE)",
+    "7f454c46": "Linux Executable (ELF)",
+    "000001ba": "MPEG Program Stream",
+    "000001b3": "MPEG Video",
+    "494433": "MP3 (ID3v2)",
+    "fff1": "AAC (ADTS)",
+    "fff8": "AAC (ADTS)",
+    "664c6143": "FLAC",
+    "4f676753": "OGG",
+    "52494646": "RIFF (WAV/AVI)",
+    "00000018": "MP4 (possibly)",
+    "1a45dfa3": "Matroska (MKV/WebM)",
+    "3026b2758e66cf11": "ASF / WMV / WMA",
+    "25504446": "PDF",
+    "d0cf11e0a1b11ae1": "Microsoft Office (pre-2007)",
+    "3c3f786d6c": "XML",
+    "68746d6c3e": "HTML",
+    "7b5c727466": "RTF",
+    "494e4445": "Windows Shortcut (LNK)",
+    "2321": "Shell Script",
+    "3c21444f435459504520": "HTML Document",
+    "efbbbf": "UTF-8 with BOM",
+    "00000020": "WASM Binary",
+    "53514c69746520666f726d6174203300": "SQLite 3"
+  },
+
+  "ambiguous_signatures": [
+    {
+      "magic": "504b0304",
+      "extensions": [".docx", ".xlsx", ".pptx", ".zip"],
+      "mime_types": [
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "application/zip"
+      ],
+      "detected_type": "ZIP / OpenXML"
+    },
+    {
+      "magic": "25504446",
+      "extensions": [".pdf"],
+      "mime_types": ["application/pdf"],
+      "detected_type": "PDF Document"
+    },
+    {
+      "magic": "52494646",
+      "extensions": [".wav", ".avi"],
+      "mime_types": ["audio/wav", "video/x-msvideo"],
+      "detected_type": "RIFF container (WAV or AVI)"
+    },
+    {
+      "magic": "1f8b08",
+      "extensions": [".gz"],
+      "mime_types": ["application/gzip"],
+      "detected_type": "GZIP Archive"
+    },
+    {
+      "magic": "1a45dfa3",
+      "extensions": [".mkv", ".webm"],
+      "mime_types": ["video/webm", "video/x-matroska"],
+      "detected_type": "Matroska container"
+    }
+  ]
 }

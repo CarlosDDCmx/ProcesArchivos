@@ -8,5 +8,4 @@ def build_main_menu():
     menu = Menu(title=_("menu_prin"))
     menu.add_command("1", SubMenuCommand(_("herramientas"), build_tools_menu), _("herramientas"))
     menu.add_command("2", SayHelloCommand(), _("saludar"))
-    menu.add_command("0", ExitCommand(), _("salir"))
     return menu

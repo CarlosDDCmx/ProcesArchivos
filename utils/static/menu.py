@@ -33,6 +33,7 @@ MENU_BANNER = generate_banner(
         [
             "Procesador de Archivos Multi-formato",
             "Versión 1.0.0",
-            "Carlos D. Díaz Cano"
+            "Carlos D. Díaz Cano",
+            "carlosd.dc.mx@gmail.com"
         ], 10
     )

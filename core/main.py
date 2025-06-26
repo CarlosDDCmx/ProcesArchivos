@@ -1,12 +1,14 @@
 import argparse
 import logging
 import builtins
+import sys, os
 from menu.navigator import Navigator
 from menu.menus.main_menu import build_main_menu
 from utils.logger import configure_logger
 from utils.i18n import get_translator
 
 def main():
+    import memory.subscribers
     parser = argparse.ArgumentParser(description="CLI tool for file analysis")
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     parser.add_argument("-l", "--lang", type=str, help="Set language code (e.g. en, es, fr)")
@@ -27,6 +29,11 @@ def main():
         lang_code=args.lang or "es"
     )
 
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    
     logging.debug(_("idioma_estab").format(lang=args.lang or "system default"))
 
     navigator = Navigator()

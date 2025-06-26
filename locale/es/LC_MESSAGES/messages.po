@@ -82,6 +82,16 @@ msgstr "Regresar"
 msgid "salir_linea"
 msgstr "Salir"
 
+msgid "ver_resultados"
+msgstr "Ver resultados"
+
+msgid "ver_memoria"
+msgstr "Ver memoria"
+
+msgid "sin_resultados"
+msgstr "No hay resultados en la sesión"
+
+
 # Detector
 msgid "detector_detectando"
 msgstr "🛠 Detectando formato de archivo..."

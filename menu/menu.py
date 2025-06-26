@@ -1,14 +1,27 @@
 import logging
+from .commands.base import Command
 from utils.i18n.safe import safe_gettext as _
 from utils.static.menu import MENU_BANNER
 
 class Menu:
     def __init__(self, title="Menu"):
         self.title = title
-        self.commands = {}
+        self.commands: dict[str, tuple[Command, str]] = {}
 
     def add_command(self, key, command, description):
-        self.commands[key] = (command, description)
+        self.commands[key.lower()] = (command, description)
+
+    def _inject_universal(self):
+        from menu.commands.concrete_command import (
+            ExitCommand, ShowResultsCommand, MemoryInspectCommand
+        )
+        universals = {
+            "x": (ExitCommand(), _("salir_linea")),
+            "r": (ShowResultsCommand(), _("ver_resultados")),
+            "m": (MemoryInspectCommand(), _("ver_memoria")),
+        }
+        for k, v in universals.items():
+            self.commands.setdefault(k, v)
 
     def display(self):
         print(f"\n{self.title}")
@@ -28,8 +41,9 @@ class Menu:
     def show(self, navigator):
         while True:
             print(MENU_BANNER)
+            self._inject_universal() 
             self.display()
-            choice = self.get_choice()
+            choice = (self.get_choice() or "").lower() 
 
             if not choice:
                 print(_("error_vacio"))
@@ -42,6 +56,5 @@ class Menu:
                     command.execute(navigator)
                 except Exception as e:
                     logging.exception(_("logger_error_eje_com").format(error=str(e)))
-                break
             else:
                 print(_("error_no_valido"))

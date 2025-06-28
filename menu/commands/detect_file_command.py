@@ -38,5 +38,10 @@ class DetectFileCommand(Command):
             logging.info(_("result_detector"))
             for key, value in results.items():
                 print(f"{key}: {value}")
+            # ── Marcar el archivo como «activo» y refrescar menú ──────────
+            from memory import set_active_event
+            from menu.menus.tools_menu import build_tools_menu
+            set_active_event(evt)
+            navigator.replace_current(build_tools_menu)
         except Exception as e:
             logging.error(_("detector_falla").format(error=str(e)))

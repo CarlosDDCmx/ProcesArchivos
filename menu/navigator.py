@@ -49,3 +49,11 @@ class Navigator:
         else:
             return _("→").join([titles[0], "…", titles[-1]])
 
+    def replace_current(self, menu_or_builder: Callable[[], Menu] | Menu):
+        """Cambia el menú superior de la pila sin alterar el resto."""
+        if not self.stack:
+            logging.error(_("error_menu_display"))
+            return
+        self.stack.pop()
+        self.go_to(menu_or_builder)
+

@@ -3,10 +3,15 @@
     "504b0304": "ZIP / DOCX / XLSX / PPTX",
     "504b0506": "ZIP (empty)",
     "504b0708": "ZIP (spanned)",
-    "52617221": "RAR (v1.5)",
+    "526172211a070100": "RAR5",
+    "52617221": "RAR (v1‑4)",
     "1f8b08": "GZIP",
     "377abcaf271c": "7-Zip",
-    "4344303031": "ISO (CD001)",
+    "4344303031": "ISO‑9660 (CD‑ROM image)",
+    "0000010000000000": "MDF (Alcohol 120%)",
+    "4d454449412044455343524950544f52": "MDS descriptor",
+    "4e45524f": "NRG (Nero image)",
+    "7801730d62626002": "Apple DMG (compressed)",
     "4d5a": "Windows Executable (EXE)",
     "7f454c46": "Linux Executable (ELF)",
     "000001ba": "MPEG Program Stream",
@@ -30,20 +35,43 @@
     "3c21444f435459504520": "HTML Document",
     "efbbbf": "UTF-8 with BOM",
     "00000020": "WASM Binary",
-    "53514c69746520666f726d6174203300": "SQLite 3"
+    "53514c69746520666f726d6174203300": "SQLite 3",
+    "89504e470d0a1a0a": "PNG",
+    "ffd8ffe0": "JPEG (JFIF)",
+    "ffd8ffe1": "JPEG (EXIF)",
+    "474946383761": "GIF87a",
+    "474946383961": "GIF89a"
   },
 
   "ambiguous_signatures": [
     {
       "magic": "504b0304",
-      "extensions": [".docx", ".xlsx", ".pptx", ".zip"],
+      "extensions": [".docx", ".xlsx", ".pptx", ".dotx", ".xlsm"],
       "mime_types": [
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-        "application/zip"
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation"
       ],
-      "detected_type": "ZIP / OpenXML"
+      "detected_type": "Office‑OpenXML"
+    },
+    {
+      "magic": "504b0304",
+      "extensions": [".odt", ".ods", ".odp", ".odg", ".odf", ".odb"],
+      "mime_types": [
+        "application/vnd.oasis.opendocument.text",
+        "application/vnd.oasis.opendocument.spreadsheet",
+        "application/vnd.oasis.opendocument.presentation",
+        "application/vnd.oasis.opendocument.graphics",
+        "application/vnd.oasis.opendocument.formula",
+        "application/vnd.oasis.opendocument.base"
+      ],
+      "detected_type": "OpenDocument"
+    },
+    {
+      "magic": "504b0304",
+      "extensions": [".zip"],
+      "mime_types": ["application/zip"],
+      "detected_type": "ZIP archive"
     },
     {
       "magic": "25504446",

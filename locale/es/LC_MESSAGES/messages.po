@@ -171,3 +171,29 @@ msgstr "🌐 Idioma establecido: {lang}"
 # Otros
 msgid "desconocido"
 msgstr "Desconocido"
+
+# Ofimatic
+msgid "leer_contenido_odf"
+msgstr "📖 Leer contenido OpenDocument"
+
+msgid "leer_contenido_docx"
+msgstr "📖 Leer contenido DOCX"
+
+msgid "odf_cargando"
+msgstr "⏳ Leyendo documento OpenDocument…"
+
+msgid "docx_cargando"
+msgstr "⏳ Leyendo documento DOCX…"
+
+msgid "odf_leido"
+msgstr "✅ Documento OpenDocument leído: {parrafos} párrafos"
+
+msgid "docx_leido"
+msgstr "✅ Documento DOCX leído: {parrafos} párrafos"
+
+# Errores Ofimatic
+msgid "odf_error_formato"
+msgstr "❌ Formato OpenDocument no soportado: {ext}"
+
+msgid "docx_error_lectura"
+msgstr "❌ Error al leer DOCX: {error}"

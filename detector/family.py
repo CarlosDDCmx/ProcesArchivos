@@ -1,13 +1,15 @@
 from memory.events import DetectedFamily
 
 def map_family(det_type: str) -> DetectedFamily:
-    t = det_type.upper()
+    t = det_type.upper().replace("–", "-")
 
-    if "OFFICE‑OPENXML" in t:
+    if "OFFICE-OPENXML" in t or "DOCX" in t or "XLSX" in t or "PPTX" in t:
         return DetectedFamily.OFFICE_ZIP
-    if "OPENDOCUMENT" in t:
+    if "OPENDOCUMENT" in t or "ODT" in t or "ODS" in t:
         return DetectedFamily.OPENDOCUMENT
-    if "RAR" in t or "7‑ZIP" in t or "ZIP CIFRADO" in t:
+    if "ZIP" in t and "ARCHIVE" in t:
+        return DetectedFamily.ARCHIVE
+    if any(x in t for x in ("RAR", "7-ZIP", "GZIP")):
         return DetectedFamily.ARCHIVE
     if "PDF" in t:
         return DetectedFamily.PDF
@@ -15,10 +17,8 @@ def map_family(det_type: str) -> DetectedFamily:
         return DetectedFamily.IMAGE
     if any(x in t for x in ("MP3", "FLAC", "AAC", "OGG", "WAV")):
         return DetectedFamily.AUDIO
-    if any(x in t for x in ("AVI", "MP4", "MKV", "MPEG")):
+    if any(x in t for x in ("AVI", "MP4", "MKV", "MPEG", "WEBM")):
         return DetectedFamily.VIDEO
-    if any(x in t for x in ("ZIP", "RAR", "7-ZIP", "GZIP")):
-        return DetectedFamily.ARCHIVE
     if any(x in t for x in ("ISO", "MDF", "MDS", "NRG", "DMG")):
         return DetectedFamily.DISK_IMAGES
     if any(x in t for x in ("EXE", "ELF", "WASM")):

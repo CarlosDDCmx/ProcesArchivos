@@ -4,7 +4,6 @@ from enum import Enum, auto
 from pathlib import Path
 from typing import Dict, Any
 
-
 class DetectedFamily(Enum):
     OPENDOCUMENT = auto()     # ODT, ODS, ODP…
     OFFICE_ZIP   = auto()     # DOCX, XLSX, PPTX

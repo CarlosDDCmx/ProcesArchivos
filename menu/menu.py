@@ -9,9 +9,11 @@ class Menu:
         self.commands: dict[str, tuple[Command, str]] = {}
 
     def add_command(self, key, command, description):
+        """Agrega un comando al menú actual."""
         self.commands[key.lower()] = (command, description)
 
     def _inject_universal(self):
+        """Agrega comandos universales comunes a todos los menús."""
         from menu.commands.concrete_command import (
             ExitCommand, ShowResultsCommand, MemoryInspectCommand
         )
@@ -24,12 +26,14 @@ class Menu:
             self.commands.setdefault(k, v)
 
     def display(self):
+        """Muestra el menú por consola."""
         print(f"\n{self.title}")
         print("-" * len(self.title))
         for key, (cmd, desc) in sorted(self.commands.items()):
             print(f"{key}. {desc}")
 
     def get_choice(self):
+        """Solicita al usuario su elección."""
         try:
             return input(_("eleccion_entra")).strip()
         except EOFError:
@@ -39,6 +43,7 @@ class Menu:
         return None
 
     def show(self, navigator):
+        """Loop de visualización e interacción del menú."""
         while True:
             print(MENU_BANNER)
             self._inject_universal() 

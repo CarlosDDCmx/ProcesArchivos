@@ -9,7 +9,6 @@ from menu.menus.main_menu import build_main_menu
 from utils.i18n import get_translator
 from utils.logger.core import configure_logger
 
-
 def main() -> None:
     """Procesa los argumentos CLI y arranca la aplicación."""
     import memory.subscribers  # efectos colaterales de registro

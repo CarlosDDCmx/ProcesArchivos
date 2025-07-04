@@ -17,7 +17,7 @@ def map_family(det_type: str) -> DetectedFamily:
         return DetectedFamily.IMAGE
     if any(x in t for x in ("MP3", "FLAC", "AAC", "OGG", "WAV")):
         return DetectedFamily.AUDIO
-    if any(x in t for x in ("AVI", "MP4", "MKV", "MPEG", "WEBM")):
+    if any(x in t for x in ("AVI", "MP4", "MKV", "MPEG", "MATROSKA", "WEBM", "WMV")):
         return DetectedFamily.VIDEO
     if any(x in t for x in ("ISO", "MDF", "MDS", "NRG", "DMG")):
         return DetectedFamily.DISK_IMAGES

@@ -1,44 +1,32 @@
-from memory.events import FileAnalyzed, ErrorEvent, DetectedFamily
-from memory.bus import MemoryBus
+import json
+import logging
 from dataclasses import asdict
-import json, logging
 from pathlib import Path
+from memory.bus import MemoryBus
+from memory.events import FileAnalyzed, ErrorEvent
+from memory import add_event
+from utils.i18n.safe import safe_gettext as _
 
-# ── Registro principal de eventos por familia ─────────────────────────────
-_REGISTRY: dict[DetectedFamily, list[FileAnalyzed]] = {}
+# ── Callback: almacenar el evento ────────────────────────────────────────
+def _store_event(evt: FileAnalyzed) -> None:
+    add_event(evt)  # actualiza registro y archivo activo
 
-def _registry_add(evt: FileAnalyzed) -> None:
-    """Agrega un evento de análisis al registro."""
-    _REGISTRY.setdefault(evt.family, []).append(evt)
-
-def get_registry():
-    """Devuelve el registro completo de análisis realizados."""
-    return _REGISTRY
-
-def family_exists(family: DetectedFamily) -> bool:
-    """Verifica si hay archivos analizados de una familia específica."""
-    return family in _REGISTRY
-
-# ── Ruta donde se guardarán los archivos JSON con los análisis ───────────
+# ── Callback: persistir a disco ──────────────────────────────────────────
 _OUT = Path("results")
 _OUT.mkdir(exist_ok=True)
 
-def _persist(evt: FileAnalyzed):
-    """Guarda los datos del evento como archivo JSON en disco."""
+def _persist_to_json(evt: FileAnalyzed) -> None:
     data = asdict(evt)
     data["path"] = str(data["path"])
     data["family"] = data["family"].name
     dest = _OUT / f"{evt.path.name}.json"
-    dest.write_text(
-        json.dumps(data, indent=2, ensure_ascii=False),
-        encoding="utf-8"
-    )
+    dest.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
+# ── Callback: log de errores ─────────────────────────────────────────────
 def _log_error(evt: ErrorEvent) -> None:
-    """Registra errores personalizados desde eventos."""
     logging.error("[%s] %s", evt.origin, evt.message)
 
-# ── Subscripciones automáticas ───────────────────────────────────────────
-MemoryBus.subscribe(FileAnalyzed, _registry_add)
-MemoryBus.subscribe(FileAnalyzed, _persist)
+# ── Registro de callbacks ────────────────────────────────────────────────
+MemoryBus.subscribe(FileAnalyzed, _store_event)
+MemoryBus.subscribe(FileAnalyzed, _persist_to_json)
 MemoryBus.subscribe(ErrorEvent,   _log_error)

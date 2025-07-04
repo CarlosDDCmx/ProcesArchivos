@@ -17,10 +17,12 @@ class Menu:
         from menu.commands.concrete_command import (
             ExitCommand, ShowResultsCommand, MemoryInspectCommand
         )
+        from menu.commands.select_active_command import SelectActiveCommand
         universals = {
             "x": (ExitCommand(), _("salir_linea")),
             "r": (ShowResultsCommand(), _("ver_resultados")),
             "m": (MemoryInspectCommand(), _("ver_memoria")),
+            "s": (SelectActiveCommand(), _("seleccionar_archivo")),
         }
         for k, v in universals.items():
             self.commands.setdefault(k, v)

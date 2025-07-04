@@ -74,6 +74,5 @@ def main() -> None:
     except Exception:
         logging.exception(_("logger_error_inesp"))
 
-
 if __name__ == "__main__":
     main()

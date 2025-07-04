@@ -197,3 +197,13 @@ msgstr "❌ Formato OpenDocument no soportado: {ext}"
 
 msgid "docx_error_lectura"
 msgstr "❌ Error al leer DOCX: {error}"
+
+# Selección de archivo activo
+msgid "seleccionar_archivo"
+msgstr "📂 Seleccionar archivo activo"
+
+msgid "seleccionar_archivo_titulo"
+msgstr "Archivos detectados:"
+
+msgid "archivo_activo_cambiado"
+msgstr "✅ Archivo activo cambiado: {path}"

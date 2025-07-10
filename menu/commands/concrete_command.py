@@ -1,9 +1,8 @@
 from .base import Command
 from utils.i18n.safe import safe_gettext as _
-from memory.subscribers import get_registry
+from memory import get_registry  
 from dataclasses import asdict
 import sys, json
-from utils.i18n.safe import safe_gettext as _
 
 class ExitCommand(Command):
     def execute(self, navigator):

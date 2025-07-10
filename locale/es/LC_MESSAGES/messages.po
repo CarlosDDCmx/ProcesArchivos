@@ -105,6 +105,46 @@ msgstr "❌ Error al detectar el tipo de archivo: {error}"
 msgid "detector_error_lee"
 msgstr "❌ Error al leer el archivo: {error}"
 
+# Menú documentos
+msgid "menu_docs"
+msgstr "📖 Documentos"
+
+msgid "docs_leer"
+msgstr "📄 Leer contenido"
+
+msgid "docs_stats"
+msgstr "📊 Obtener estadísticas"
+
+msgid "docs_meta"
+msgstr "📑 Leer metadatos"
+
+msgid "procesar_opendoc"
+msgstr "📖 Procesar OpenDocument"
+
+msgid "docs_no_activo"
+msgstr "❌ No hay documento activo para procesar"
+
+msgid "odf_stats_error"
+msgstr "❌ Error al generar estadísticas ODF: {error}"
+
+msgid "odf_meta_error"
+msgstr "❌ Error al leer metadatos ODF: {error}"
+
+msgid "docs_data_missing"
+msgstr "❌ Primero lee el contenido del documento (opción 1)."
+
+msgid "menu_doc_title"
+msgstr "📖 Documentos"
+
+msgid "leer_contenido"
+msgstr "📄 Leer contenido"
+
+msgid "leer_estadisticas"
+msgstr "📊 Obtener estadísticas"
+
+msgid "leer_metadatos"
+msgstr "📑 Leer metadatos"
+
 # Mensajes logger
 msgid "detector_no_ruta"
 msgstr "⚠️ No se proporcionó ruta de archivo."
@@ -172,7 +212,7 @@ msgstr "🌐 Idioma establecido: {lang}"
 msgid "desconocido"
 msgstr "Desconocido"
 
-# Ofimatic
+# Ofimatic/Docs
 msgid "leer_contenido_odf"
 msgstr "📖 Leer contenido OpenDocument"
 
@@ -190,6 +230,62 @@ msgstr "✅ Documento OpenDocument leído: {parrafos} párrafos"
 
 msgid "docx_leido"
 msgstr "✅ Documento DOCX leído: {parrafos} párrafos"
+
+# Ofimatic/Spreadsheet
+msgid "xlsx_cargando"
+msgstr "⏳ Leyendo documento Excel…"
+
+msgid "xlsx_error_lectura"
+msgstr "❌ Error al leer Excel: {error}"
+
+msgid "xlsx_leido"
+msgstr "✅ Documento Excel leído: {hojas} hojas"
+
+msgid "ods_cargando"
+msgstr "⏳ Leyendo documento ODS…"
+
+msgid "ods_error_lectura"
+msgstr "❌ Error al leer ODS: {error}"
+
+msgid "ods_leido"
+msgstr "✅ Documento ODS leído: {hojas} hojas"
+
+msgid "sheet_inexistente"
+msgstr "❌ La hoja '{nombre}' no existe"
+
+msgid "xlsx_ods_no_soportado"
+msgstr "❌ Formato no soportado para hojas de cálculo: {ext}"
+
+# Ofimatic/Docx
+msgid "docx_no_activo"
+msgstr "❌ No hay documento DOCX activo para procesar."
+
+msgid "docx_no_datos"
+msgstr "⚠️ No hay contenido leído para calcular estadísticas."
+
+msgid "docx_sin_metadata"
+msgstr "⚠️ No se encontraron metadatos en el archivo DOCX."
+
+msgid "docx_metadata_titulo"
+msgstr "📑 Metadatos del documento DOCX:"
+
+msgid "docx_stats_titulo"
+msgstr "📊 Estadísticas del documento DOCX:"
+
+msgid "leer_docx"
+msgstr "📄 Leer contenido"
+
+msgid "estadisticas_docx"
+msgstr "📊 Obtener estadísticas"
+
+msgid "metadatos_docx"
+msgstr "📑 Leer metadatos"
+
+msgid "procesar_docx"
+msgstr "📘 Procesar documento DOCX"
+
+msgid "menu_docx"
+msgstr "📘 Documentos DOCX"
 
 # Errores Ofimatic
 msgid "odf_error_formato"

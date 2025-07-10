@@ -1,28 +1,25 @@
+
 # 🧠 Detector de Tipo de Archivo CLI
-[Español](/README.md) | [English](/README/en.md) |
+
+[Español](/README.md) | [English](/README/en.md)
 
 [![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3130/)
 [![Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)](#)
-[![Licencia](https://img.shields.io/badge/licencia-MIT-green)](LICENSE)
 [![Compatibilidad](https://img.shields.io/badge/i18n-es%2Fen-lightgrey)](#)
 
-Aplicación CLI modular e internacionalizada para detectar tipos de archivo mediante la lectura de encabezados binarios.
+Aplicación CLI modular e internacionalizada para detectar y analizar documentos mediante la lectura de encabezados y contenidos internos.
+
 ---
 
 ## 🚀 Características
 
-- 🔍 Detección precisa del tipo de archivo a partir de su cabecera.
-- 🌐 Soporte multiidioma.
+- 🔍 Detección precisa del tipo de archivo desde su cabecera binaria.
+- 📖 Lectura de contenido textual desde documentos OpenDocument (`.odt`) y Office (`.docx`).
+- 📊 Estadísticas: párrafos, palabras, caracteres, tablas, objetos incrustados.
+- 📑 Extracción de metadatos de los documentos.
+- 🧠 Registro automático de sesiones con memoria activa y persistente.
+- 🌐 Soporte multilenguaje (`gettext`).
 - 🧩 Arquitectura extensible basada en menús.
-- 🧪 CLI interactiva fácil de usar y ampliar.
-
----
-
-## 📌 Dependencias
-
-* Python 3.13+
-* Librerías estándar (no necesita dependencias externas).
-* `gettext` para internacionalización.
 
 ---
 
@@ -31,25 +28,28 @@ Aplicación CLI modular e internacionalizada para detectar tipos de archivo medi
 ```
 
 procesArchivos/
-├── core/                 # Punto de entrada
-│   └── main.py
-├── menu/                 # Sistema de menús
+├── core/                    # Entrada principal (main.py)
+├── detector/                # Detección binaria por encabezado
+│   └── signatures.json      # Firmas mágicas por tipo
+├── ofimatic/                # Lectura y análisis de documentos
+│   ├── core_zip.py          # Archivo zip
+│   ├── loader_docx.py       # Estadísticas comunes
+│   └── loader_opendoc.py    # Extracción de metadatos
+├── memory/                  # Sistema de eventos y registro
+│   ├── events.py
+│   ├── bus.py
+│   ├── subscribers.py
+│   └── __init__.py
+├── menu/                    # Menús CLI
 │   ├── menu.py
 │   ├── navigator.py
-│   ├── commands/
-│   └── menus/
-├── detector/             # Lógica de detección
-│   ├── analyzer.py
-│   ├── detector.py
-│   ├── loader.py
-│   ├── report.py
-│   └── signatures.json
-├── utils/                # Utilidades generales
-│   ├── i18n/             # Para internacionalización
-│   └── logger/           # Para depuración y registros
-├── locale/               # Archivos para cada idiomas
-│   └── es/LC/_MESSAGES/messages.mo
-└── README.md
+│   ├── commands/            # Integración de funciones
+│   └── menus/               # Estructura de menú
+├── utils/                   # i18n, logging y utilidades
+│   ├── i18n/
+│   └── logger/
+├── locale/                  # Traducciones
+└── results/                 # Salidas de sesión en JSON
 
 ````
 
@@ -58,43 +58,78 @@ procesArchivos/
 ## ⚙️ Requisitos
 
 - Python 3.13 o superior
-- Solo bibliotecas estándar (`gettext`, `os`, `mimetypes`, etc.)
+- Uso exclusivo de bibliotecas estándar (`gettext`, `os`, `mimetypes`, `zipfile`, `xml.etree`, etc.)
 
 ---
 
 ## 🧪 Ejecución
 
-Sigue las instrucciones del menú interactivo:
+Ejecuta desde la raíz del proyecto:
+
+```bash
+python core/main.py
+````
+
+Interactúa desde el menú:
 
 ```
-0. 🚪 Salir
-1. 🛠 Herramientas
-2. 👋 Saludar
+🛠 Herramientas
+--------------
+0. 🔙 Volver
+1. 🔎 Detectores
+2. 📖 Procesar OpenDocument
+m. Ver memoria
+r. Ver resultados
+s. 📂 Seleccionar archivo activo
+x. Salir
+```
+
+Menú de Documentos:
+
+```
+📖 Documentos
+------------
+0. 🔙 Volver
+1. 📄 Leer contenido
+2. 📊 Obtener estadísticas
+3. 📑 Leer metadatos
 ```
 
 ---
 
-## 🧠 Ejemplo de Detección
+## 🧠 Ejemplo de Análisis
 
 ```text
-📄 Introduce la ruta al archivo: ejemplo.pdf
+📄 Introduce la ruta al archivo: informe.odt
 🔢 ¿Cuántos bytes del encabezado deseas leer? (por defecto: 8): 16
 
 ✅ Resultado de la detección:
-path: ejemplo.pdf
-size: 19345
-header: 255044462d312e350a25d0d4c5d8
+path: informe.odt
+size: 1048183
+header: 504b0304140000080000159c
 header_bytes: 16
-extension: .pdf
-mime_type: application/pdf
-detected_type: Documento PDF
+extension: .odt
+mime_type: application/vnd.oasis.opendocument.text
+detected_type: OpenDocument
 ```
+
+---
+
+## 🧠 Memoria y Resultados
+
+Cada análisis genera:
+
+* 🧠 Evento en memoria activa (accesible con `Ver memoria`)
+* 📁 Archivo JSON en `results/<archivo>.json` con análisis simple
+* 🔄 Selección de archivo activo para trabajar con distintos comandos
 
 ---
 
 ## 🌍 Internacionalización (i18n)
 
-Este proyecto utiliza `gettext`. Para cambiar el idioma:
+Este proyecto usa `gettext`.
+
+### Para cambiar el idioma:
 
 ```bash
 # Windows
@@ -104,10 +139,12 @@ set LANG=es_MX.UTF-8
 export LANG=es_MX.UTF-8
 ```
 
-Para agregar nuevos idiomas:
+### Para agregar nuevos idiomas:
 
 ```bash
-pygettext -d messages -o locales/fr/LC_MESSAGES/messages.po utils/i18n.py
-# Traducir el archivo .po
-msgfmt locales/fr/LC_MESSAGES/messages.po -o locales/fr/LC_MESSAGES/messages.mo
+# Generar archivo .po
+pygettext -d messages -o locale/fr/LC_MESSAGES/messages.po utils/i18n/safe.py
+
+# Compilar traducción
+msgfmt locale/fr/LC_MESSAGES/messages.po -o locale/fr/LC_MESSAGES/messages.mo
 ```

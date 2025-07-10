@@ -1,0 +1,13 @@
+# Changelog
+
+## [1.0.0] - 2025-07-09
+### Added
+- Primera versión de chengelog.
+- Nuevo submenú "Documentos" para procesar archivos OpenDocument (ODT, ODS, ODP).
+- Lectura de contenido de documentos OpenDocument (extracción de párrafos).
+- Generación de estadísticas: cantidad de párrafos, palabras, caracteres, tablas, objetos OLE, etc.
+- Extracción de metadatos desde el archivo `meta.xml` (autor, título, fechas, generador, etc).
+- Integración con el sistema de eventos `memory`:
+  - Registro con el tipo `OfficeDocAnalyzed`.
+- Integración completa con sistema de internacionalización (`gettext`).
+- Inclusión dinámica de comandos en el menú según el tipo de archivo detectado.

@@ -1,7 +1,7 @@
 from .base import Command
 from utils.i18n.safe import safe_gettext as _
 from memory import get_active_event
-from ofimatic.loader_docx import read_docx, stats_docx, metadata_docx
+from ofimatic.loader_officezip import read_docx, stats_docx, metadata_docx
 
 class ReadDOCXCommand(Command):
     def execute(self, navigator):

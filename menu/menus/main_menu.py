@@ -1,5 +1,5 @@
 from menu.menu import Menu
-from menu.commands.concrete_command import ExitCommand, SayHelloCommand
+from menu.commands.concrete_command import SayHelloCommand
 from menu.commands.submenu_command import SubMenuCommand
 from menu.menus.tools_menu import build_tools_menu
 from utils.i18n.safe import safe_gettext as _

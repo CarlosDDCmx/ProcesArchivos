@@ -15,11 +15,11 @@ Aplicación CLI modular e internacionalizada para detectar y analizar documentos
 
 - 🔍 Detección precisa del tipo de archivo desde su cabecera binaria.
 - 📖 Lectura de contenido textual desde documentos OpenDocument (`.odt`) y Office (`.docx`).
-- 📊 Estadísticas: párrafos, palabras, caracteres, tablas, objetos incrustados.
-- 📑 Extracción de metadatos de los documentos.
+- 📊 Estadísticas detalladas de contenido (párrafos, palabras, celdas).
+- 📑 Extracción de metadatos estándar (autor, fechas, título, etc.).
 - 🧠 Registro automático de sesiones con memoria activa y persistente.
 - 🌐 Soporte multilenguaje (`gettext`).
-- 🧩 Arquitectura extensible basada en menús.
+- 🧩 Arquitectura extensible basada en menús y comandos.
 
 ---
 
@@ -33,7 +33,7 @@ procesArchivos/
 │   └── signatures.json      # Firmas mágicas por tipo
 ├── ofimatic/                # Lectura y análisis de documentos
 │   ├── core_zip.py          # Archivo zip
-│   ├── loader_docx.py       # Estadísticas comunes
+│   ├── loader_officezip.py  # Estadísticas comunes
 │   └── loader_opendoc.py    # Extracción de metadatos
 ├── memory/                  # Sistema de eventos y registro
 │   ├── events.py

@@ -1,91 +1,462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-10 18:58-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-# Menús
-msgid "🏠 Main Menu"
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\core\main.py:66
+msgid "idioma_estab"
 msgstr ""
 
-msgid "🛠 Tools"
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\core\main.py:73
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:22
+msgid "salir_linea"
 msgstr ""
 
-msgid "saludar"
-msgstr ""
-
-msgid "salir"
-msgstr ""
-
-msgid "detector"
-msgstr ""
-
-msgid "detec_info"
-msgstr ""
-
-msgid "volver"
-msgstr ""
-
-msgid "Back"
-msgstr ""
-
-# Prompts
-msgid "elección_entra"
-msgstr ""
-
-msgid "ruta_entra"
-msgstr ""
-
-msgid "bytes_entra"
-msgstr ""
-
-# Mensajes comunes
-msgid "error_vacio"
-msgstr ""
-
-msgid "error_no_valido"
-msgstr ""
-
-msgid "saluda_usuario"
-msgstr ""
-
-msgid "volver_linea"
-msgstr ""
-
-msgid "salir"
-msgstr ""
-
-msgid "detector_detectando"
-msgstr ""
-
-msgid "✅ Detection result:"
-msgstr ""
-
-msgid "detector_falla"
-msgstr ""
-
-msgid "detector_error_lee"
-msgstr ""
-
-msgid "detector_no_ruta"
-msgstr ""
-
-msgid "logger_menu_ele"
-msgstr ""
-
-msgid "logger_cierre_inesp"
-msgstr ""
-
-msgid "logger_error_entra"
-msgstr ""
-
-msgid "logger_error_eje_com"
-msgstr ""
-
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\core\main.py:75
 msgid "logger_error_inesp"
 msgstr ""
 
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\analyzer.py:40
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\detector.py:32
 msgid "desconocido"
 msgstr ""
 
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\analyzer.py:65
+msgid "reporte_bytes_insuf"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\analyzer.py:98
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\detector.py:62
+msgid "detector_error_lee"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\detector.py:19
+msgid "error_firmas_carga"
+msgstr ""
+
+#. Mensaje definido en tu catálogo messages.po
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\loader.py:29
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\core_zip.py:19
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_opendoc.py:45
+msgid "loader_error"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\report.py:4
+msgid "reporte_ruta"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\report.py:5
+msgid "reporte_bytes"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\report.py:6
+msgid "reporte_b_leido"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\report.py:7
+msgid "reporte_encabezado"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\report.py:8
+msgid "reporte_extension"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\report.py:9
+msgid "reporte_MIME"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\detector\report.py:10
+msgid "reporte_tipo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:23
+msgid "ver_resultados"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:24
+msgid "ver_memoria"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:25
+msgid "seleccionar_archivo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:40
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\select_active_command.py:24
+msgid "eleccion_entra"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:42
+msgid "logger_cierre_inesp"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:44
+msgid "logger_error_entra"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:56
+msgid "error_vacio"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:61
+msgid "logger_menu_ele"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:65
+msgid "logger_error_eje_com"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menu.py:67
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\select_active_command.py:28
+msgid "error_no_valido"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\navigator.py:22
+msgid "error_menu_go_to"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\navigator.py:24
+msgid "error_menu_const"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\navigator.py:44
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\navigator.py:64
+msgid "error_menu_display"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\navigator.py:57
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\navigator.py:59
 msgid "→"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_dispatch.py:67
+msgid "formato_no_soportado"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_officezip.py:28
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_officezip.py:29
+msgid "zip_error_invalido"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_officezip.py:31
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_officezip.py:32
+msgid "zip_error_lectura"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_opendoc.py:57
+msgid "odf_cargando"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_opendoc.py:82
+msgid "odf_leido"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\loader_opendoc.py:135
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\odf_commands.py:66
+msgid "odf_stats_error"
+msgstr ""
+
+#. Mensaje traducido si falla la creación del directorio
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\utils\logger\core.py:59
+msgid "logger_error_crea_dir"
+msgstr ""
+
+#. ── Mensajes iniciales ────────────────────────────────────────────────
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\utils\logger\core.py:72
+msgid "inicio_app"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\utils\logger\core.py:74
+msgid "verbose_hab"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\utils\logger\core.py:77
+msgid "ruta_logs_msj"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\formats\docx.py:22
+msgid "docx_cargando"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\formats\docx.py:35
+msgid "docx_leido"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\formats\docx.py:39
+msgid "docx_error_lectura"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\formats\docx.py:82
+msgid "docx_error_meta"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\formats\xlsx.py:23
+msgid "xlsx_cargando"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\formats\xlsx.py:53
+msgid "xlsx_leido"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\formats\xlsx.py:57
+msgid "xlsx_error_lectura"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\ofimatic\formats\xlsx.py:97
+msgid "xlsx_error_meta"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\concrete_command.py:9
+msgid "salir"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\concrete_command.py:14
+msgid "saluda_usuario"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\concrete_command.py:24
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\read_pptx_command.py:17
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\read_pptx_command.py:21
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\select_active_command.py:15
+msgid "sin_resultados"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\concrete_command.py:52
+msgid "parrafos_mas"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\concrete_command.py:62
+msgid "tablas_mas"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\detect_file_command.py:13
+msgid "ruta_entra"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\detect_file_command.py:15
+msgid "detector_no_ruta"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\detect_file_command.py:18
+msgid "bytes_entra"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\detect_file_command.py:30
+msgid "result_detector"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\detect_file_command.py:42
+msgid "detector_falla"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\docx_commands.py:10
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\docx_commands.py:24
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\docx_commands.py:44
+msgid "docx_no_activo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\docx_commands.py:29
+msgid "docx_no_datos"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\docx_commands.py:35
+msgid "docx_stats_titulo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\docx_commands.py:51
+msgid "docx_sin_metadata"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\docx_commands.py:54
+msgid "docx_metadata_titulo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\metadata_command.py:12
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\read_content_command.py:13
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\stats_command.py:12
+msgid "sin_archivo_activo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\metadata_command.py:23
+msgid "metadatos_obtenidos"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\metadata_command.py:27
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\metadata_command.py:28
+msgid "error_lectura_metadatos"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\odf_commands.py:21
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\odf_commands.py:49
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\odf_commands.py:73
+msgid "docs_no_activo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\odf_commands.py:55
+msgid "docs_data_missing"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\odf_commands.py:80
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\odf_commands.py:86
+msgid "odf_meta_error"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\read_content_command.py:17
+msgid "tipo_no_soportado"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\read_content_command.py:30
+msgid "sin_parrafos"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\read_content_command.py:35
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\read_content_command.py:36
+msgid "error_lectura_contenido"
+msgstr ""
+
+#. TODO: Implementar lectura real de PPTX
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\read_pptx_command.py:25
+msgid "pptx_lectura_no_disponible"
+msgstr ""
+
+#. Muestra lista numerada
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\select_active_command.py:19
+msgid "seleccionar_archivo_titulo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\select_active_command.py:32
+msgid "archivo_activo_cambiado"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\spreadsheet_command.py:13
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\spreadsheet_command.py:40
+msgid "error_no_documento_activo"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\spreadsheet_command.py:25
+msgid "error_no_soporta_lectura"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\spreadsheet_command.py:31
+msgid "ods_leido"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\spreadsheet_command.py:33
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\spreadsheet_command.py:62
+msgid "ods_error"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\spreadsheet_command.py:52
+msgid "error_no_soporta_metadatos"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\spreadsheet_command.py:58
+msgid "ods_meta_ok"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\stats_command.py:19
+msgid "contenido_no_cargado"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\stats_command.py:26
+msgid "stats_obtenidas"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\stats_command.py:30
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\stats_command.py:31
+msgid "error_lectura_stats"
+msgstr ""
+
+#. Futuro: comandos específicos para archivos PPTX
+#. Opción 0: volver
+#. Espacio para pptx, xlsx, etc.
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\commands\submenu_command.py:14
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\detectors_menu.py:9
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docs_menu.py:15
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docx_menu.py:15
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\pptx_menu.py:11
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\tools_menu.py:41
+msgid "volver"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\detectors_menu.py:7
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\tools_menu.py:15
+msgid "detector"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\detectors_menu.py:8
+msgid "detec_info"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docs_menu.py:11
+msgid "menu_docs"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docs_menu.py:12
+msgid "docs_leer"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docs_menu.py:13
+msgid "docs_stats"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docs_menu.py:14
+msgid "docs_meta"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docx_menu.py:11
+msgid "menu_docx"
+msgstr ""
+
+#. Se asume que todos los documentos usan el mismo ReadContentCommand
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docx_menu.py:12
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\tools_menu.py:26
+msgid "leer_contenido"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docx_menu.py:13
+msgid "obtener_stats"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\docx_menu.py:14
+msgid "leer_metadatos"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\main_menu.py:8
+msgid "menu_prin"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\main_menu.py:9
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\tools_menu.py:13
+msgid "herramientas"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\main_menu.py:10
+msgid "saludar"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\pptx_menu.py:7
+msgid "menu_pptx"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\tools_menu.py:31
+msgid "obtener_estadisticas"
+msgstr ""
+
+#: D:\MV\Compartido\Programas\Python\Analizador\.procesa-documentos\menu\menus\tools_menu.py:36
+msgid "obtener_metadatos"
 msgstr ""

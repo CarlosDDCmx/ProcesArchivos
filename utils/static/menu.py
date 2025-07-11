@@ -5,7 +5,7 @@ def generate_banner(title: str, attrs: list, pad: int=2) -> str:
     Args:
         title (str): Texto del título (primera línea)
         attrs (list): Lista de textos para las líneas restantes
-        pad (int): Espacio entre texto y borde (por defecto: 2)
+        pad (int): Espacio entre texto y borde
     
     Returns:
         str: Banner formateado
@@ -32,7 +32,7 @@ MENU_BANNER = generate_banner(
         "ProcesArchivos",
         [
             "Procesador de Archivos Multi-formato",
-            "Versión 1.0.0",
+            "Versión 1.1.0",
             "Carlos D. Díaz Cano",
             "carlosd.dc.mx@gmail.com"
         ], 10

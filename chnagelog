@@ -1,7 +1,22 @@
 # Changelog
 
+## [1.1.0] - 2025-07-11
+
+### Añadido
+- Soporte completo para lectura de metadatos en documentos OpenDocument (`.odt`, `.ods`, `.odp`).
+- Lógica de truncamiento específica para `paragraphs` y `tables` en `opendoc_data` y `docx_data` al inspeccionar la memoria.
+- Se agregó traducción `items_omitidos` para listas largas al mostrar inspección de memoria.
+- Se agregó un script para i18n que encuentra todos los mensajes que usan el wrapper para generar el archivo de mensajes (po)
+
+### Modificado
+- Se mejoró el manejo de errores en la extracción de metadatos de archivos `.odt` para evitar falsos negativos.
+- El `Command` de lectura de metadatos ahora utiliza `handler["metadata"]` de forma segura y desacoplada del nombre anterior `meta`.
+
+### Correcciones
+- Ahora se eliminan correctamente pares `None` en los metadatos para evitar claves vacías en la memoria.
+
 ## [1.0.0] - 2025-07-09
-### Added
+### Añadido
 - Primera versión de chengelog.
 - Nuevo submenú "Documentos" para procesar archivos OpenDocument (ODT, ODS, ODP).
 - Lectura de contenido de documentos OpenDocument (extracción de párrafos).

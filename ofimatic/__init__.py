@@ -1,4 +1,3 @@
-from .loader_opendoc import read_opendocument
-from .loader_docx import read_docx
+from .loader_dispatch import get_format_handler, SUPPORTED_FORMATS
 
-__all__ = ["read_opendocument", "read_docx"]
+__all__ = ["get_format_handler", "SUPPORTED_FORMATS"]

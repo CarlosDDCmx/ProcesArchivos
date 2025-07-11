@@ -2,15 +2,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ProcesArchivos 1.0\n"
 "Report-Msgid-Bugs-To: carlosd.dc.mx@gmail.com\n"
-"POT-Creation-Date: 2025-06-06 00:00+0000\n"
-"PO-Revision-Date: 2025-06-06 00:00+0000\n"
+"POT-Creation-Date: 2025-07-10 18:58-0600\n"
+"PO-Revision-Date: 2025-07-11 00:00+0000\n"
 "Language-Team: CDDC\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-# Menús
+# --- 01 - Núcleo (core) ---
+msgid "idioma_estab"
+msgstr "🌐 Idioma establecido: {lang}"
+
+msgid "salir_linea"
+msgstr "Salir"
+
+msgid "logger_error_inesp"
+msgstr "⚠️ Se produjo una excepción no controlada"
+
+# --- 02 - Menús (menu/menus) ---
 msgid "menu_prin"
 msgstr "🏠 Menú Principal"
 
@@ -20,163 +30,50 @@ msgstr "🛠 Herramientas"
 msgid "saludar"
 msgstr "👋 Saludar"
 
-msgid "salir"
-msgstr "🚪 Salir"
-
 msgid "detector"
 msgstr "🔎 Detectores"
 
-msgid "detec_info"
-msgstr "Detectar el formato del archivo desde el encabezado"
+msgid "obtener_estadisticas"
+msgstr "📊 Obtener estadísticas"
 
-msgid "volver"
-msgstr "🔙 Volver"
+msgid "obtener_metadatos"
+msgstr "📑 Leer metadatos"
 
-# Prompts
-msgid "eleccion_entra"
-msgstr "➡️  Ingresa tu elección: "
+msgid "menu_pptx"
+msgstr "🏠 Menú Principal"
+
+# --- 03 - Comandos (menu/commands) ---
+msgid "saluda_usuario"
+msgstr "👋 ¡Hola, usuario!"
 
 msgid "ruta_entra"
 msgstr "📄 Ingresa la ruta al archivo: "
 
+msgid "detector_falla"
+msgstr "❌ Error al detectar el tipo de archivo: {error}"
+
+msgid "ods_leido"
+msgstr "✅ Documento ODS leído: {hojas} hojas"
+
+msgid "ods_error"
+msgstr "❌ Error procesando hoja de cálculo: {error}"
+
+# --- 04 - Detector (detector) ---
+msgid "desconocido"
+msgstr "Desconocido"
+
 msgid "bytes_entra"
 msgstr "🔢 ¿Cuántos bytes del encabezado deseas leer? (por defecto: 8): "
 
-msgid "error_menu_const"
-msgstr "❌ Error al construir el menú: {error}"
-
-msgid "error_menu_go_to"
-msgstr "❌ Menú inválido pasado a go_to"
-
-msgid "error_menu_display"
-msgstr "❌ No hay menú para mostrar"
-
-msgid "→"
-msgstr "→"
-
-msgid "error_bytes_tipo"
-msgstr "❌ La cantidad de bytes debe ser un entero positivo."
-
-msgid "result_detector"
-msgstr "✅ Resultados de detección:"
-
-msgid "error_firmas_carga"
-msgstr "⚠️ No se pudo cargar el archivo de firmas: {error}"
-
-msgid "aviso_menor_bytes"
+msgid "reporte_bytes_insuf"
 msgstr "⚠️ Se solicitaron {requested} bytes pero el archivo solo tiene {actual} bytes."
-
-# Mensajes comunes
-msgid "error_vacio"
-msgstr "❌ No se ingresó ningún valor. Intenta nuevamente."
-
-msgid "error_no_valido"
-msgstr "❌ Opción inválida. Intenta nuevamente."
-
-msgid "saluda_usuario"
-msgstr "👋 ¡Hola, usuario!"
-
-msgid "volver_linea"
-msgstr "Regresar"
-
-msgid "salir_linea"
-msgstr "Salir"
-
-msgid "ver_resultados"
-msgstr "Ver resultados"
-
-msgid "ver_memoria"
-msgstr "Ver memoria"
-
-msgid "sin_resultados"
-msgstr "No hay resultados en la sesión"
-
-
-# Detector
-msgid "detector_detectando"
-msgstr "🛠 Detectando formato de archivo..."
-
-msgid "detector_resultado"
-msgstr "✅ Resultado de detección:"
-
-msgid "detector_falla"
-msgstr "❌ Error al detectar el tipo de archivo: {error}"
 
 msgid "detector_error_lee"
 msgstr "❌ Error al leer el archivo: {error}"
 
-# Menú documentos
-msgid "menu_docs"
-msgstr "📖 Documentos"
+msgid "error_firmas_carga"
+msgstr "⚠️ No se pudo cargar el archivo de firmas: {error}"
 
-msgid "docs_leer"
-msgstr "📄 Leer contenido"
-
-msgid "docs_stats"
-msgstr "📊 Obtener estadísticas"
-
-msgid "docs_meta"
-msgstr "📑 Leer metadatos"
-
-msgid "procesar_opendoc"
-msgstr "📖 Procesar OpenDocument"
-
-msgid "docs_no_activo"
-msgstr "❌ No hay documento activo para procesar"
-
-msgid "odf_stats_error"
-msgstr "❌ Error al generar estadísticas ODF: {error}"
-
-msgid "odf_meta_error"
-msgstr "❌ Error al leer metadatos ODF: {error}"
-
-msgid "docs_data_missing"
-msgstr "❌ Primero lee el contenido del documento (opción 1)."
-
-msgid "menu_doc_title"
-msgstr "📖 Documentos"
-
-msgid "leer_contenido"
-msgstr "📄 Leer contenido"
-
-msgid "leer_estadisticas"
-msgstr "📊 Obtener estadísticas"
-
-msgid "leer_metadatos"
-msgstr "📑 Leer metadatos"
-
-# Mensajes logger
-msgid "detector_no_ruta"
-msgstr "⚠️ No se proporcionó ruta de archivo."
-
-msgid "logger_menu_ele"
-msgstr "💡 El usuario eligió: {choice} en el menú {menu}"
-
-msgid "logger_cierre_inesp"
-msgstr "⚠️ Entrada cerrada inesperadamente."
-
-msgid "logger_error_entra"
-msgstr "❌ Error inesperado al recibir entrada: {error}"
-
-msgid "logger_error_eje_com"
-msgstr "❌ Error al ejecutar el comando: {error}"
-
-msgid "logger_error_crea_dir"
-msgstr "❌ No se pudo crear directorio de logs: {error}"
-
-msgid "logger_error_inesp"
-msgstr "⚠️ Se produjo una excepción no controlada"
-
-msgid "inicio_app"
-msgstr "✅ Comienza aplicación"
-
-msgid "verbose_hab"
-msgstr "🔍 Modo verbose habilitado"
-
-msgid "ruta_logs_msj"
-msgstr "📁 Logs are being saved to: {path}"
-
-# Mensajes logger: reporte
 msgid "reporte_ruta"
 msgstr "📝 Archivo analizado: {path}"
 
@@ -198,108 +95,100 @@ msgstr "📑 Tipo MIME: {mime_type}"
 msgid "reporte_tipo"
 msgstr "📌 Tipo detectado: {detected_type}"
 
-msgid "loader_error"
-msgstr "⚠️ No se pudieron cargar las firmas del archivo: {error}"
+# --- 05 - Ofimática Formatos (ofimatic/general) ---
+msgid "leer_contenido"
+msgstr "📄 Leer contenido"
 
-msgid "reporte_bytes_insuf"
-msgstr "⚠️ Se solicitaron {requested} bytes pero el archivo solo tiene {actual} bytes."
+msgid "stats_obtenidas"
+msgstr "📄 Estadísticas obtenidas"
 
-#i18n
-msgid "idioma_estab"
-msgstr "🌐 Idioma establecido: {lang}"
-
-# Otros
-msgid "desconocido"
-msgstr "Desconocido"
-
-# Ofimatic/Docs
-msgid "leer_contenido_odf"
-msgstr "📖 Leer contenido OpenDocument"
-
-msgid "leer_contenido_docx"
-msgstr "📖 Leer contenido DOCX"
-
-msgid "odf_cargando"
-msgstr "⏳ Leyendo documento OpenDocument…"
-
+# --- 05 - Ofimática Formatos (ofimatic/formats) ---
 msgid "docx_cargando"
 msgstr "⏳ Leyendo documento DOCX…"
-
-msgid "odf_leido"
-msgstr "✅ Documento OpenDocument leído: {parrafos} párrafos"
 
 msgid "docx_leido"
 msgstr "✅ Documento DOCX leído: {parrafos} párrafos"
 
-# Ofimatic/Spreadsheet
+msgid "docx_error_lectura"
+msgstr "❌ Error al leer DOCX: {error}"
+
 msgid "xlsx_cargando"
 msgstr "⏳ Leyendo documento Excel…"
-
-msgid "xlsx_error_lectura"
-msgstr "❌ Error al leer Excel: {error}"
 
 msgid "xlsx_leido"
 msgstr "✅ Documento Excel leído: {hojas} hojas"
 
-msgid "ods_cargando"
-msgstr "⏳ Leyendo documento ODS…"
+msgid "xlsx_error_lectura"
+msgstr "❌ Error al leer Excel: {error}"
 
-msgid "ods_error_lectura"
-msgstr "❌ Error al leer ODS: {error}"
+# --- 06 - Ofimática Carga (ofimatic/loader y core_zip.py) ---
+msgid "loader_error"
+msgstr "⚠️ No se pudieron cargar las firmas del archivo: {error}"
 
-msgid "ods_leido"
-msgstr "✅ Documento ODS leído: {hojas} hojas"
+msgid "formato_no_soportado"
+msgstr "❌ Formato no soportado: {mime_type}"
 
-msgid "sheet_inexistente"
-msgstr "❌ La hoja '{nombre}' no existe"
+msgid "zip_error_invalido"
+msgstr "❌ Archivo ZIP inválido: {error}"
 
-msgid "xlsx_ods_no_soportado"
-msgstr "❌ Formato no soportado para hojas de cálculo: {ext}"
+msgid "zip_error_lectura"
+msgstr "❌ Error al leer ZIP {path}: {error}"
 
-# Ofimatic/Docx
-msgid "docx_no_activo"
-msgstr "❌ No hay documento DOCX activo para procesar."
+msgid "odf_cargando"
+msgstr "⏳ Leyendo documento OpenDocument…"
 
-msgid "docx_no_datos"
-msgstr "⚠️ No hay contenido leído para calcular estadísticas."
+msgid "odf_leido"
+msgstr "✅ Documento OpenDocument leído: {parrafos} párrafos"
 
-msgid "docx_sin_metadata"
-msgstr "⚠️ No se encontraron metadatos en el archivo DOCX."
+msgid "odf_stats_error"
+msgstr "❌ Error al generar estadísticas ODF: {error}"
 
-msgid "docx_metadata_titulo"
-msgstr "📑 Metadatos del documento DOCX:"
+# --- 07 - Logger (utils/logger) ---
+msgid "logger_error_crea_dir"
+msgstr "❌ No se pudo crear directorio de logs: {error}"
 
-msgid "docx_stats_titulo"
-msgstr "📊 Estadísticas del documento DOCX:"
+msgid "inicio_app"
+msgstr "✅ Comienza aplicación"
 
-msgid "leer_docx"
-msgstr "📄 Leer contenido"
+msgid "verbose_hab"
+msgstr "🔍 Modo verbose habilitado"
 
-msgid "estadisticas_docx"
-msgstr "📊 Obtener estadísticas"
+msgid "ruta_logs_msj"
+msgstr "📁 Logs are being saved to: {path}"
 
-msgid "metadatos_docx"
-msgstr "📑 Leer metadatos"
+msgid "logger_menu_ele"
+msgstr "💡 El usuario eligió: {choice} en el menú {menu}"
 
-msgid "procesar_docx"
-msgstr "📘 Procesar documento DOCX"
+msgid "error_lectura_metadatos"
+msgstr "❌ Este tipo de documento no soporta metadatos"
 
-msgid "menu_docx"
-msgstr "📘 Documentos DOCX"
+# --- 08 - Otros (varios) ---
+msgid "ver_resultados"
+msgstr "📈 Ver resultados"
 
-# Errores Ofimatic
-msgid "odf_error_formato"
-msgstr "❌ Formato OpenDocument no soportado: {ext}"
+msgid "ver_memoria"
+msgstr "🧠 Ver memoria"
 
-msgid "docx_error_lectura"
-msgstr "❌ Error al leer DOCX: {error}"
-
-# Selección de archivo activo
 msgid "seleccionar_archivo"
 msgstr "📂 Seleccionar archivo activo"
 
-msgid "seleccionar_archivo_titulo"
-msgstr "Archivos detectados:"
+msgid "eleccion_entra"
+msgstr "➡️  Ingresa tu elección: "
 
-msgid "archivo_activo_cambiado"
-msgstr "✅ Archivo activo cambiado: {path}"
+msgid "salir"
+msgstr "🚪 Salir"
+
+msgid "sin_resultados"
+msgstr "No hay resultados en la sesión"
+
+msgid "volver"
+msgstr "🔙 Volver"
+
+msgid "parrafos_mas"
+msgstr "párrafos omitidos"
+
+msgid "tablas_mas"
+msgstr "tablas omitidas"
+
+msgid "elemen_omitidos"
+msgstr "elementos omitidos"

@@ -31,20 +31,22 @@ procesArchivos/
 ├── core/                    # Entrada principal (main.py)
 ├── detector/                # Detección binaria por encabezado
 │   └── signatures.json      # Firmas mágicas por tipo
-├── ofimatic/                # Lectura y análisis de documentos
-│   ├── core_zip.py          # Archivo zip
-│   ├── loader_officezip.py  # Estadísticas comunes
-│   └── loader_opendoc.py    # Extracción de metadatos
+├── locale/                  # Archivos de mensajes para internacionalización
 ├── memory/                  # Sistema de eventos y registro
 │   ├── events.py
 │   ├── bus.py
 │   ├── subscribers.py
 │   └── __init__.py
 ├── menu/                    # Menús CLI
-│   ├── menu.py
-│   ├── navigator.py
+│   ├── menu.py              # Lógica de menú
+│   ├── navigator.py         # Menús básicos
 │   ├── commands/            # Integración de funciones
 │   └── menus/               # Estructura de menú
+├── ofimatic/                # Lectura y análisis de documentos
+│   ├── formtas/             # Procesamiento de documentos específicos
+│   ├── core_zip.py          # Núcleo común
+│   ├── loader_officezip.py  # Comprobación de formatos office MS
+│   └── loader_opendoc.py    # Comprobación de formatos open office
 ├── utils/                   # i18n, logging y utilidades
 │   ├── i18n/
 │   └── logger/

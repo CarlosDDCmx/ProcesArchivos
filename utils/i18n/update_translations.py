@@ -1,110 +1,89 @@
-import shutil
-import subprocess
-from pathlib import Path
-from datetime import datetime
+import argparse
+import sys
+import os
+import tempfile
+from utils.i18n.update import (
+    extract_translations,
+    init_po_file,
+    backup_po_file,
+    deduplicate_po,
+    merge_translations,
+    verify_po,
+    compile_mo,
+)
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-LOCALE_DIR = BASE_DIR / "locale"
-POT_FILE = LOCALE_DIR / "messages.pot"
-PO_FILE = LOCALE_DIR / "es" / "LC_MESSAGES" / "messages.po"
-MO_FILE = LOCALE_DIR / "es" / "LC_MESSAGES" / "messages.mo"
-TEMP_FILE_LIST = BASE_DIR / "files.txt"
-BACKUP_FILE = PO_FILE.with_name(f"messages.po.bak")
+def running_in_test_or_tmp():
+    """
+    Detecta si el script corre dentro de pytest o en una carpeta temporal.
+    """
+    # 1. Modo pytest detectado
+    if "PYTEST_CURRENT_TEST" in os.environ:
+        return True
 
-def run(cmd, cwd=None):
-    result = subprocess.run(cmd, cwd=cwd, text=True, capture_output=True)
-    if result.returncode != 0:
-        print(f"❌ Error al ejecutar: {' '.join(cmd)}")
-        print(result.stderr)
-    return result
-
-def extract_translations():
-    print("📦 Extrayendo cadenas del código fuente...")
-
-    py_files = [str(f) for f in BASE_DIR.rglob("*.py") if "venv" not in str(f)]
-    TEMP_FILE_LIST.write_text("\n".join(py_files), encoding="utf-8")
-
-    run([
-        "xgettext",
-        "--language=Python",
-        "--from-code=UTF-8",
-        "--add-comments",
-        "--output", str(POT_FILE),
-        "--files-from", str(TEMP_FILE_LIST)
-    ])
-
-    if POT_FILE.exists():
-        print(f"✅ Plantilla POT generada: {POT_FILE.name}")
-
-    if TEMP_FILE_LIST.exists():
-        TEMP_FILE_LIST.unlink()
-        print("🧹 Eliminado archivo temporal files.txt")
-
-def backup_po_file():
-    if PO_FILE.exists():
-        shutil.copy(PO_FILE, BACKUP_FILE)
-        print(f"💾 Backup creado: {BACKUP_FILE.name}")
-
-def init_po_file():
-    if not PO_FILE.exists():
-        print("⚠️ No se encontró es.po, creando uno nuevo...")
-        PO_FILE.parent.mkdir(parents=True, exist_ok=True)
-        run([
-            "msginit", "--no-translator", "--locale=es",
-            "--input", str(POT_FILE), "--output-file", str(PO_FILE)
-        ])
-
-def show_duplicates(po_path: Path):
-    lines = po_path.read_text(encoding="utf-8").splitlines()
-    msgid_lines = [line for line in lines if line.startswith("msgid ")]
-    seen = set()
-    duplicates = set()
-
-    for line in msgid_lines:
-        if line in seen:
-            duplicates.add(line)
-        seen.add(line)
-
-    if duplicates:
-        print("⚠️  Duplicados detectados:")
-        for d in sorted(duplicates):
-            print(f"   {d}")
-    return bool(duplicates)
-
-def deduplicate_po():
-    print("🧽 Eliminando duplicados en es.po...")
-    if show_duplicates(PO_FILE):
-        run(["msguniq", "--force-po", "--output", str(PO_FILE), str(PO_FILE)])
-        print("✅ Duplicados eliminados.")
-    else:
-        print("✅ No se encontraron duplicados.")
-
-def merge_translations():
-    print("🔄 Fusionando mensajes nuevos con es.po...")
-    run([
-        "msgmerge", "--update", "--backup=none",
-        str(PO_FILE), str(POT_FILE)
-    ])
-
-def verify_po():
-    print("🧪 Verificando formato de es.po...")
-    run(["msgfmt", "--check", str(PO_FILE)])
-
-def compile_mo():
-    print("📦 Compilando archivo MO...")
-    run(["msgfmt", "-o", str(MO_FILE), str(PO_FILE)])
-    if MO_FILE.exists():
-        print(f"✅ Archivo compilado: {MO_FILE.name}")
+    # 2. CWD dentro de un directorio temporal
+    cwd = os.getcwd()
+    temp_dirs = [tempfile.gettempdir(), "/tmp", "\\tmp"]
+    return any(cwd.startswith(td) for td in temp_dirs)
 
 def main():
-    extract_translations()
-    init_po_file()
-    backup_po_file()
-    deduplicate_po()       # Antes de merge
-    merge_translations()
-    deduplicate_po()       # Después de merge, por seguridad
-    verify_po()
-    compile_mo()
+    parser = argparse.ArgumentParser(
+        description="🛠 Herramienta para gestionar traducciones (.po/.mo)"
+    )
+    parser.add_argument(
+        "--extract", action="store_true", help="Extrae cadenas de texto a un archivo .pot"
+    )
+    parser.add_argument(
+        "--init", action="store_true", help="Inicializa el archivo <locale>.po si no existe"
+    )
+    parser.add_argument(
+        "--backup", action="store_true", help="Crea un respaldo del archivo <locale>.po"
+    )
+    parser.add_argument(
+        "--dedup", action="store_true", help="Elimina cadenas duplicadas del archivo <locale>.po"
+    )
+    parser.add_argument(
+        "--merge", action="store_true", help="Fusiona nuevos mensajes con <locale>.po"
+    )
+    parser.add_argument(
+        "--verify", action="store_true", help="Verifica el formato del archivo <locale>.po"
+    )
+    parser.add_argument(
+        "--compile", action="store_true", help="Compila el archivo <locale>.mo"
+    )
+    parser.add_argument(
+        "--all", action="store_true", help="Ejecuta el flujo completo"
+    )
+    parser.add_argument(
+        "--locale", default="es", help="Código de idioma (por defecto: 'es')"
+    )
+
+    args = parser.parse_args()
+    lang = args.locale
+
+    if args.all:
+        extract_translations()
+        init_po_file(lang)
+        backup_po_file(lang)
+        deduplicate_po(lang)
+        merge_translations(lang)
+        deduplicate_po(lang)
+        verify_po(lang)
+        compile_mo(lang)
+    else:
+        if args.extract:
+            extract_translations()
+        if args.init:
+            init_po_file(lang)
+        if args.backup:
+            backup_po_file(lang)
+        if args.dedup:
+            deduplicate_po(lang)
+        if args.merge:
+            merge_translations(lang)
+        if args.verify:
+            verify_po(lang)
+        if args.compile:
+            compile_mo(lang)
 
 if __name__ == "__main__":
     main()

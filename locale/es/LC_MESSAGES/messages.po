@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProcesArchivos 1.0\n"
-"Report-Msgid-Bugs-To: carlosd.dc.mx@gmail.com\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-10 18:58-0600\n"
 "PO-Revision-Date: 2025-07-11 00:00+0000\n"
 "Language-Team: CDDC\n"
@@ -31,7 +31,7 @@ msgid "saludar"
 msgstr "👋 Saludar"
 
 msgid "detector"
-msgstr "🔎 Detectores"
+msgstr "🔍 Detector"
 
 msgid "obtener_estadisticas"
 msgstr "📊 Obtener estadísticas"
@@ -57,6 +57,9 @@ msgstr "✅ Documento ODS leído: {hojas} hojas"
 
 msgid "ods_error"
 msgstr "❌ Error procesando hoja de cálculo: {error}"
+
+msgid "error_no_valido"
+msgstr "❌ Opción no valida}"
 
 # --- 04 - Detector (detector) ---
 msgid "desconocido"
@@ -95,13 +98,6 @@ msgstr "📑 Tipo MIME: {mime_type}"
 msgid "reporte_tipo"
 msgstr "📌 Tipo detectado: {detected_type}"
 
-# --- 05 - Ofimática Formatos (ofimatic/general) ---
-msgid "leer_contenido"
-msgstr "📄 Leer contenido"
-
-msgid "stats_obtenidas"
-msgstr "📄 Estadísticas obtenidas"
-
 # --- 05 - Ofimática Formatos (ofimatic/formats) ---
 msgid "docx_cargando"
 msgstr "⏳ Leyendo documento DOCX…"
@@ -121,7 +117,18 @@ msgstr "✅ Documento Excel leído: {hojas} hojas"
 msgid "xlsx_error_lectura"
 msgstr "❌ Error al leer Excel: {error}"
 
+# --- 05 - Ofimática Formatos (ofimatic/metadata) ---
+
+msgid "error_lectura_metadatos"
+msgstr "❌ Este tipo de documento no soporta metadatos"
+
+msgid "error_no_soporta_metadatos"
+msgstr "❌ Este tipo de documento no soporta metadatos."
+
 # --- 06 - Ofimática Carga (ofimatic/loader y core_zip.py) ---
+msgid "leer_contenido"
+msgstr "📑Leer contenido"
+
 msgid "loader_error"
 msgstr "⚠️ No se pudieron cargar las firmas del archivo: {error}"
 
@@ -143,6 +150,15 @@ msgstr "✅ Documento OpenDocument leído: {parrafos} párrafos"
 msgid "odf_stats_error"
 msgstr "❌ Error al generar estadísticas ODF: {error}"
 
+msgid "items_omitidos"
+msgstr "elementos omitidos"
+
+msgid "parrafos_mas"
+msgstr "párrafos omitidos"
+
+msgid "tablas_mas"
+msgstr "tablas omitidas"
+
 # --- 07 - Logger (utils/logger) ---
 msgid "logger_error_crea_dir"
 msgstr "❌ No se pudo crear directorio de logs: {error}"
@@ -155,12 +171,6 @@ msgstr "🔍 Modo verbose habilitado"
 
 msgid "ruta_logs_msj"
 msgstr "📁 Logs are being saved to: {path}"
-
-msgid "logger_menu_ele"
-msgstr "💡 El usuario eligió: {choice} en el menú {menu}"
-
-msgid "error_lectura_metadatos"
-msgstr "❌ Este tipo de documento no soporta metadatos"
 
 # --- 08 - Otros (varios) ---
 msgid "ver_resultados"
@@ -184,11 +194,5 @@ msgstr "No hay resultados en la sesión"
 msgid "volver"
 msgstr "🔙 Volver"
 
-msgid "parrafos_mas"
-msgstr "párrafos omitidos"
-
-msgid "tablas_mas"
-msgstr "tablas omitidas"
-
-msgid "elemen_omitidos"
-msgstr "elementos omitidos"
+msgid "error_vacio"
+msgstr "Error: Vacío"

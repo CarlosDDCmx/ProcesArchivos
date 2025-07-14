@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.1] - 2025-07-13
+
+### Añadido
+- Pruebas actualizadas para nueva estructura actual y todos los cambios recientes.
+- Prueba unitaria `test_back_command_goes_back` para `BackCommand`, usando `unittest.mock.patch` para evitar bloqueo por `Menu.show()`.
+- Reubicación del comando `SelectActiveCommand` a `concrete_command.py` para mantener consistencia con otros comandos universales.
+
+### Modificado
+- Refactorización de `menu.menu.Menu` para introducir `_inject_universal_enabled` como atributo booleano, con lógica controlada dentro de `_inject_universal()`.
+- Actualización de `Navigator._show_current()` y `Menu.show()` para evitar errores de atributos faltantes en `Menu`.
+
+### Corregido
+- Corregido `TypeError` y `AttributeError` por uso indebido del argumento `inject_universal` y ausencia de atributo `_inject_universal_enabled`.
+- Evitado el bloqueo por `input()` en pruebas con `patch("builtins.input")` y `patch("menu.menu.Menu.show")` para ejecución sin intervención manual.
+- Pruebas que antes quedaban en espera o requerían interrupción manual ahora pasan correctamente.
+
+### Pendientes
+- ¡IMPORTANTE! Pruebas para actualización de mensajes para i18n está fallando y por recomendación no se deben ejecutar hasta que sea arreglado.
+- Pruebas para menu también están pendientes para mejoras.
+
 ## [1.1.0] - 2025-07-11
 
 ### Añadido
@@ -12,7 +32,7 @@
 - Se mejoró el manejo de errores en la extracción de metadatos de archivos `.odt` para evitar falsos negativos.
 - El `Command` de lectura de metadatos ahora utiliza `handler["metadata"]` de forma segura y desacoplada del nombre anterior `meta`.
 
-### Correcciones
+### Corregido
 - Ahora se eliminan correctamente pares `None` en los metadatos para evitar claves vacías en la memoria.
 
 ## [1.0.0] - 2025-07-09

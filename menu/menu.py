@@ -4,9 +4,10 @@ from utils.i18n.safe import safe_gettext as _
 from utils.static.menu import MENU_BANNER
 
 class Menu:
-    def __init__(self, title="Menu"):
+    def __init__(self, title="Menu", inject_universal=True):
         self.title = title
         self.commands: dict[str, tuple[Command, str]] = {}
+        self._inject_universal_enabled = inject_universal
 
     def add_command(self, key, command, description):
         """Agrega un comando al menú actual."""
@@ -14,10 +15,12 @@ class Menu:
 
     def _inject_universal(self):
         """Agrega comandos universales comunes a todos los menús."""
+        if not self._inject_universal_enabled:
+            return
         from menu.commands.concrete_command import (
             ExitCommand, ShowResultsCommand, MemoryInspectCommand
         )
-        from menu.commands.select_active_command import SelectActiveCommand
+        from menu.commands.concrete_command import SelectActiveCommand
         universals = {
             "x": (ExitCommand(), _("salir_linea")),
             "r": (ShowResultsCommand(), _("ver_resultados")),

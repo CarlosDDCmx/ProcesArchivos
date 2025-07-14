@@ -1,5 +1,5 @@
 import logging
-import os
+import os, io
 import faulthandler
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
@@ -72,7 +72,10 @@ def configure_logger(
     logger.info(_("inicio_app"))
     if verbose:
         logger.debug(_("verbose_hab"))
-        faulthandler.enable()
+        try:
+            faulthandler.enable()
+        except (io.UnsupportedOperation, AttributeError):
+            logger.debug("⚠️ faulthandler no disponible en este entorno")
     if log_to_file:
         logger.info(_("ruta_logs_msj").format(path=log_file))
 

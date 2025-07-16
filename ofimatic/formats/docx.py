@@ -18,7 +18,10 @@ _CORE_META = "docProps/core.xml"
 
 
 def read_docx(path: str | Path) -> Dict[str, List[str]]:
-    """Extrae los párrafos de un documento DOCX."""
+    """
+    Extrae los párrafos de un documento DOCX.
+    Devuelve un dict con clave 'paragraphs'.
+    """
     logger.info(_("docx_cargando"))
     try:
         data = read_multiple_zip_entries(path, [_MAIN_XML])
@@ -41,7 +44,10 @@ def read_docx(path: str | Path) -> Dict[str, List[str]]:
 
 
 def stats_docx(data: Dict[str, List[str]]) -> Dict[str, int]:
-    """Calcula estadísticas básicas del texto en DOCX."""
+    """
+    Calcula estadísticas básicas del texto en DOCX:
+    paragraphs, words, chars.
+    """
     paragraphs = data.get("paragraphs", [])
     return {
         "paragraphs": len(paragraphs),
@@ -51,7 +57,9 @@ def stats_docx(data: Dict[str, List[str]]) -> Dict[str, int]:
 
 
 def metadata_docx(path: str | Path) -> Dict[str, str]:
-    """Lee metadatos básicos del DOCX desde docProps/core.xml."""
+    """
+    Lee metadatos básicos desde docProps/core.xml.
+    """
     try:
         data = read_multiple_zip_entries(path, [_CORE_META])
         xml = ET.fromstring(data[_CORE_META])
@@ -66,14 +74,14 @@ def metadata_docx(path: str | Path) -> Dict[str, str]:
             return el.text.strip() if el is not None and el.text else None
 
         meta = {
-            "title":        _get_text(".//dc:title"),
-            "subject":      _get_text(".//dc:subject"),
-            "creator":      _get_text(".//dc:creator"),
-            "created":      _get_text(".//dcterms:created"),
-            "modified":     _get_text(".//dcterms:modified"),
-            "description":  _get_text(".//dc:description"),
-            "keywords":     _get_text(".//cp:keywords"),
-            "lastModifiedBy": _get_text(".//cp:lastModifiedBy"),
+            "title":            _get_text(".//dc:title"),
+            "subject":          _get_text(".//dc:subject"),
+            "creator":          _get_text(".//dc:creator"),
+            "created":          _get_text(".//dcterms:created"),
+            "modified":         _get_text(".//dcterms:modified"),
+            "description":      _get_text(".//dc:description"),
+            "keywords":         _get_text(".//cp:keywords"),
+            "lastModifiedBy":   _get_text(".//cp:lastModifiedBy"),
         }
 
         return {k: v for k, v in meta.items() if v}

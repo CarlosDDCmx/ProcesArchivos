@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.2] - 
+
+### Añadido
+- Pruebas: `core_zip`, `loader_dispatch`, `loader_officezip`, `loader_opendoc` y para todos los formatos.
+- Pruebas unitarias para el módulo `memory`: `bus.py`, `events.py` Y `subscribers.py`.
+
+### Modificado
+- Uso de carpeta temporal relativa `tests/temp_files` para pruebas con archivos DOCX/XLSX.
+- Limpieza y estandarización de pruebas: sin emoticonos en excepciones; pruebas más robustas ante errores zip/XML.
+
+### Corregido
+- Corrección de nombres de claves en los catálogos de i18n para `xlsx_leido` y `xlsx_leido_hojas`.
+- Ajuste en la extracción de textos compartidos (`sharedStrings.xml`) en `read_xlsx`, añadiendo namespace XML correcto para `<t>`.
+
+### Pendientes
+- ¡IMPORTANTE! Pruebas para actualización de mensajes para i18n está fallando y por recomendación no se deben ejecutar hasta que sea arreglado.
+- Pruebas para menu también están pendientes para mejoras.
+- Algunas pruebas necesitan mejoras para cubrir cerca al 100%.
+
 ## [1.1.1] - 2025-07-13
 
 ### Añadido

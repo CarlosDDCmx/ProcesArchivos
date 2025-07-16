@@ -111,8 +111,11 @@ msgstr "❌ Error al leer DOCX: {error}"
 msgid "xlsx_cargando"
 msgstr "⏳ Leyendo documento Excel…"
 
-msgid "xlsx_leido"
+msgid "xlsx_leido_hojas"
 msgstr "✅ Documento Excel leído: {hojas} hojas"
+
+msgid "xlsx_leido_filas"
+msgstr "✅ Excel leído con {filas} filas."
 
 msgid "xlsx_error_lectura"
 msgstr "❌ Error al leer Excel: {error}"

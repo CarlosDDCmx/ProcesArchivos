@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 # ────────────────────────────────────────────────────────────────────────────────
-# 🧪 UTILIDADES PARA BACKUP Y RESTAURACIÓN SEGURA
+# UTILIDADES PARA BACKUP Y RESTAURACIÓN SEGURA
 # ────────────────────────────────────────────────────────────────────────────────
 
 def safe_backup(path: Path):
@@ -21,7 +21,7 @@ def safe_restore(original: Path, backup: Path):
         backup.rename(original)
 
 # ────────────────────────────────────────────────────────────────────────────────
-# ✅ PRUEBA DE INTEGRACIÓN GENERAL (EJECUCIÓN CORRECTA)
+# PRUEBA DE INTEGRACIÓN GENERAL (EJECUCIÓN CORRECTA)
 # ────────────────────────────────────────────────────────────────────────────────
 
 def test_update_translations_script_runs():
@@ -37,7 +37,7 @@ def test_update_translations_script_runs():
 
 
 # ────────────────────────────────────────────────────────────────────────────────
-# ❌ CASO: FALTA EL ARCHIVO .po
+# CASO: FALTA EL ARCHIVO .po
 # ────────────────────────────────────────────────────────────────────────────────
 
 def test_fail_if_no_po():
@@ -59,7 +59,7 @@ def test_fail_if_no_po():
 
 
 # ────────────────────────────────────────────────────────────────────────────────
-# ❌ CASO: ARCHIVO .po INVÁLIDO (UTF-8 O ESTRUCTURA)
+# CASO: ARCHIVO .po INVÁLIDO (UTF-8 O ESTRUCTURA)
 # ────────────────────────────────────────────────────────────────────────────────
 
 def test_fail_if_invalid_po():
@@ -85,7 +85,7 @@ def test_fail_if_invalid_po():
 
 
 # ────────────────────────────────────────────────────────────────────────────────
-# ❌ CASO: ARCHIVO .pot MALFORMADO
+# CASO: ARCHIVO .pot MALFORMADO
 # ────────────────────────────────────────────────────────────────────────────────
 
 def test_fail_if_bad_po(isolated_locale):

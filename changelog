@@ -1,6 +1,31 @@
 # Changelog
 
-## [1.1.2] - 
+## [1.1.3] - 2025-07-16
+
+### Añadido
+- Soporte para generación de archivos `.po` en múltiples idiomas simultáneamente (`--locales`).
+- Opción `--check-missing` para mostrar y registrar las traducciones faltantes.
+- Validación automática y corrección del encabezado `Language:` en archivos `.po`.
+- Opción `--dry-run` para realizar simulaciones sin modificar archivos reales.
+- Registro opcional en `logs/i18n_report.log` del estado de las traducciones por idioma.
+- Impresión clara y visual de `msgid` faltantes en consola.
+
+### Modificado
+- Eliminadas las constantes `PO_FILE` y `MO_FILE` a favor de rutas dinámicas por idioma.
+- Mejora en el manejo de codificación para archivos `.po`, forzando siempre UTF-8.
+- `runner.py` puede ahora ejecutarse directamente como script con `python runner.py`.
+- Opción `--report` para generar o no un archivo log de traducción (activado por defecto).
+- Los archivos `.mo` ya no se generan en la raíz, sólo en sus carpetas correspondientes.
+
+### Corregido
+- Error de `ImportError` por referencia a constantes eliminadas (`PO_FILE`).
+- Traducciones en idiomas asiáticos o con caracteres especiales ahora se guardan correctamente en UTF-8.
+
+### Pendientes
+- Validar contenido semántico de `msgstr` (detectando si están vacíos o incompletos).
+- ¡IMPORTANTE! Pruebas para actualización de mensajes para i18n está fallando y por recomendación no se deben ejecutar hasta que sea arreglado.
+
+## [1.1.2] - 2025-07-15
 
 ### Añadido
 - Pruebas: `core_zip`, `loader_dispatch`, `loader_officezip`, `loader_opendoc` y para todos los formatos.

@@ -32,7 +32,7 @@ MENU_BANNER = generate_banner(
         "ProcesArchivos",
         [
             "Procesador de Archivos Multi-formato",
-            "Versión 1.1.2",
+            "Versión 1.1.3",
             "Carlos D. Díaz Cano",
             "carlosd.dc.mx@gmail.com"
         ], 10

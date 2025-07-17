@@ -1,147 +1,468 @@
 msgid ""
 msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-16 18:18-0600\n"
+"Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: en\n"
 
-# Menús
-msgid "menu_prin"
-msgstr "🏠 Main Menu"
-
-msgid "herramientas"
-msgstr "🛠 Tools"
-
-msgid "saludar"
-msgstr "👋 Greet"
-
-msgid "salir"
-msgstr "🚪 Exit"
-
-msgid "detector"
-msgstr "🔎 Detectors"
-
-msgid "detec_info"
-msgstr "Detect file format from the header"
-
-msgid "volver"
-msgstr "🔙 Back"
-
-# Prompts
-msgid "eleccion_entra"
-msgstr "➡️  Enter your choice: "
-
-msgid "ruta_entra"
-msgstr "📄 Enter the file path: "
-
-msgid "bytes_entra"
-msgstr "🔢 How many header bytes do you want to read? (default: 8): "
-
-msgid "error_menu_const"
-msgstr "❌ Error building menu: {error}"
-
-msgid "error_menu_go_to"
-msgstr "❌ Invalid menu passed to go_to"
-
-msgid "error_menu_display"
-msgstr "❌ No menu to display"
-
-msgid "→"
-msgstr "→"
-
-msgid "error_bytes_tipo"
-msgstr "❌ The number of bytes must be a positive integer."
-
-msgid "result_detector"
-msgstr "✅ Detection results:"
-
-# Mensajes comunes
-msgid "error_vacio"
-msgstr "❌ No value entered. Please try again."
-
-msgid "error_no_valido"
-msgstr "❌ Invalid option. Please try again."
-
-msgid "saluda_usuario"
-msgstr "👋 Hello, user!"
-
-msgid "volver_linea"
-msgstr "Back"
-
-msgid "salir_linea"
-msgstr "Exit"
-
-# Detector
-msgid "detector_detectando"
-msgstr "🛠 Detecting file format..."
-
-msgid "detector_resultado"
-msgstr "✅ Detection result:"
-
-msgid "error_firmas_carga"
-msgstr "⚠️ Couldn't load signature file: {error}"
-
-msgid "detector_falla"
-msgstr "❌ Error detecting file type: {error}"
-
-msgid "detector_error_lee"
-msgstr "❌ Error reading file: {error}"
-
-# Mensajes logger
-msgid "detector_no_ruta"
-msgstr "⚠️ No file path provided."
-
-msgid "logger_menu_ele"
-msgstr "💡 User selected: {choice} in menu {menu}"
-
-msgid "logger_cierre_inesp"
-msgstr "⚠️ Input closed unexpectedly."
-
-msgid "logger_error_entra"
-msgstr "❌ Unexpected error receiving input: {error}"
-
-msgid "logger_error_eje_com"
-msgstr "❌ Error executing command: {error}"
-
-msgid "logger_error_crea_dir"
-msgstr "❌ Could not create logs directory: {error}"
-
-msgid "logger_error_inesp"
-msgstr "⚠️ An unhandled exception occurred"
-
-msgid "inicio_app"
-msgstr "✅ Application started"
-
-msgid "verbose_hab"
-msgstr "🔍 Verbose mode enabled"
-
-msgid "ruta_logs_msj"
-msgstr "📁 Logs are being saved to: {path}"
-
-# Mensajes logger: reporte
-msgid "reporte_ruta"
-msgstr "📝 File analyzed: {path}"
-
-msgid "reporte_bytes"
-msgstr "📦 Size (bytes): {size}"
-
-msgid "reporte_b_leido"
-msgstr "📦 Bytes read: {header_bytes}"
-
-msgid "reporte_encabezado"
-msgstr "🔍 Header (hex): {header}"
-
-msgid "reporte_extension"
-msgstr "📂 Extension: {extension}"
-
-msgid "reporte_MIME"
-msgstr "📑 MIME Type: {mime_type}"
-
-msgid "reporte_tipo"
-msgstr "📌 Detected type: {detected_type}"
-
 # i18n
+#: core\main.py:66
 msgid "idioma_estab"
 msgstr "🌐 Language set: {lang}"
 
+#: core\main.py:73 menu\menu.py:25
+msgid "salir_linea"
+msgstr "Exit"
+
+#: core\main.py:75
+msgid "logger_error_inesp"
+msgstr "⚠️ An unhandled exception occurred"
+
 # Otros
+#: detector\analyzer.py:40 detector\detector.py:32
 msgid "desconocido"
 msgstr "Unknown"
+
+#: detector\analyzer.py:65
+#, fuzzy
+msgid "reporte_bytes_insuf"
+msgstr "📦 Size (bytes): {size}"
+
+#: detector\analyzer.py:98 detector\detector.py:62
+msgid "detector_error_lee"
+msgstr "❌ Error reading file: {error}"
+
+#: detector\detector.py:19
+msgid "error_firmas_carga"
+msgstr "⚠️ Couldn't load signature file: {error}"
+
+#. Mensaje definido en tu catálogo messages.po
+#: detector\loader.py:29 ofimatic\core_zip.py:19 ofimatic\loader_opendoc.py:45
+#: tests\ofimatic\test_core_zip.py:32
+#, fuzzy
+msgid "loader_error"
+msgstr "❌ Unexpected error receiving input: {error}"
+
+# Mensajes logger: reporte
+#: detector\report.py:4
+msgid "reporte_ruta"
+msgstr "📝 File analyzed: {path}"
+
+#: detector\report.py:5
+msgid "reporte_bytes"
+msgstr "📦 Size (bytes): {size}"
+
+#: detector\report.py:6
+msgid "reporte_b_leido"
+msgstr "📦 Bytes read: {header_bytes}"
+
+#: detector\report.py:7
+msgid "reporte_encabezado"
+msgstr "🔍 Header (hex): {header}"
+
+#: detector\report.py:8
+msgid "reporte_extension"
+msgstr "📂 Extension: {extension}"
+
+#: detector\report.py:9
+msgid "reporte_MIME"
+msgstr "📑 MIME Type: {mime_type}"
+
+#: detector\report.py:10
+msgid "reporte_tipo"
+msgstr "📌 Detected type: {detected_type}"
+
+#: menu\menu.py:26
+#, fuzzy
+msgid "ver_resultados"
+msgstr "✅ Detection result:"
+
+#: menu\menu.py:27
+msgid "ver_memoria"
+msgstr "🧠 View memory"
+
+# Prompts
+#: menu\menu.py:28
+#, fuzzy
+msgid "seleccionar_archivo"
+msgstr "➡️  Enter your choice: "
+
+# Prompts
+#: menu\menu.py:43 menu\commands\concrete_command.py:55
+msgid "eleccion_entra"
+msgstr "➡️  Enter your choice: "
+
+#: menu\menu.py:45
+msgid "logger_cierre_inesp"
+msgstr "⚠️ Input closed unexpectedly."
+
+#: menu\menu.py:47
+msgid "logger_error_entra"
+msgstr "❌ Unexpected error receiving input: {error}"
+
+# Mensajes comunes
+#: menu\menu.py:59
+msgid "error_vacio"
+msgstr "❌ No value entered. Please try again."
+
+#: menu\menu.py:64
+msgid "logger_menu_ele"
+msgstr "💡 User selected: {choice} in menu {menu}"
+
+#: menu\menu.py:68
+msgid "logger_error_eje_com"
+msgstr "❌ Error executing command: {error}"
+
+#: menu\menu.py:70 menu\commands\concrete_command.py:59
+msgid "error_no_valido"
+msgstr "❌ Invalid option. Please try again."
+
+#: menu\navigator.py:22
+msgid "error_menu_go_to"
+msgstr "❌ Invalid menu passed to go_to"
+
+#: menu\navigator.py:24
+msgid "error_menu_const"
+msgstr "❌ Error building menu: {error}"
+
+#: menu\navigator.py:44 menu\navigator.py:64
+msgid "error_menu_display"
+msgstr "❌ No menu to display"
+
+#: menu\navigator.py:57 menu\navigator.py:59
+msgid "→"
+msgstr "→"
+
+#: ofimatic\loader_dispatch.py:67 tests\ofimatic\test_loader_dispatch.py:25
+msgid "formato_no_soportado"
+msgstr "❌ Unsupported format: {mime_type}"
+
+#: ofimatic\loader_officezip.py:28 ofimatic\loader_officezip.py:29
+#, fuzzy
+msgid "zip_error_invalido"
+msgstr "❌ Invalid option. Please try again."
+
+#: ofimatic\loader_officezip.py:31 ofimatic\loader_officezip.py:32
+#, fuzzy
+msgid "zip_error_lectura"
+msgstr "❌ Unexpected error receiving input: {error}"
+
+#: ofimatic\loader_opendoc.py:57
+msgid "odf_cargando"
+msgstr "⏳ Reading OpenDocument…"
+
+#: ofimatic\loader_opendoc.py:82
+msgid "odf_leido"
+msgstr "✅ OpenDocument read: {parrafos} paragraphs"
+
+#: ofimatic\loader_opendoc.py:135 menu\commands\odf_commands.py:66
+msgid "odf_stats_error"
+msgstr "❌ Error generating ODF statistics: {error}"
+
+#. Mensaje traducido si falla la creación del directorio
+#: utils\logger\core.py:59
+msgid "logger_error_crea_dir"
+msgstr "❌ Could not create logs directory: {error}"
+
+#. ── Mensajes iniciales ────────────────────────────────────────────────
+#: utils\logger\core.py:72 tests\utils\i18n\test_core_i18n.py:8
+msgid "inicio_app"
+msgstr "✅ Application started"
+
+#: utils\logger\core.py:74
+msgid "verbose_hab"
+msgstr "🔍 Verbose mode enabled"
+
+#: utils\logger\core.py:80
+msgid "ruta_logs_msj"
+msgstr "📁 Logs are being saved to: {path}"
+
+#: tests\utils\i18n\test_config.py:4
+msgid "mensaje"
+msgstr "Message"
+
+#: ofimatic\formats\docx.py:25
+msgid "docx_cargando"
+msgstr "⏳ Reading DOCX document…"
+
+#: ofimatic\formats\docx.py:38
+msgid "docx_leido"
+msgstr "✅ DOCX document read: {parrafos} paragraphs"
+
+#: ofimatic\formats\docx.py:42
+#, fuzzy
+msgid "docx_error_lectura"
+msgstr "❌ Unexpected error receiving input: {error}"
+
+#: ofimatic\formats\docx.py:90
+#, fuzzy
+msgid "docx_error_meta"
+msgstr "❌ Unexpected error receiving input: {error}"
+
+#: ofimatic\formats\xlsx.py:26
+msgid "xlsx_cargando"
+msgstr "⏳ Reading Excel document…"
+
+#: ofimatic\formats\xlsx.py:55
+msgid "xlsx_leido_hojas"
+msgstr "✅ Excel document read: {hojas} sheets"
+
+#: ofimatic\formats\xlsx.py:59
+#, fuzzy
+msgid "xlsx_error_lectura"
+msgstr "❌ Unexpected error receiving input: {error}"
+
+#: ofimatic\formats\xlsx.py:103
+#, fuzzy
+msgid "xlsx_error_meta"
+msgstr "❌ Unexpected error receiving input: {error}"
+
+#: menu\commands\concrete_command.py:13
+msgid "salir"
+msgstr "🚪 Exit"
+
+#: menu\commands\concrete_command.py:19
+msgid "saluda_usuario"
+msgstr "👋 Hello, user!"
+
+#: menu\commands\concrete_command.py:31 menu\commands\concrete_command.py:46
+#: menu\commands\read_pptx_command.py:17 menu\commands\read_pptx_command.py:21
+#, fuzzy
+msgid "sin_resultados"
+msgstr "✅ Detection result:"
+
+#. Muestra lista numerada
+#: menu\commands\concrete_command.py:50
+msgid "seleccionar_archivo_titulo"
+msgstr "📂 Select active file"
+
+#: menu\commands\concrete_command.py:63
+msgid "archivo_activo_cambiado"
+msgstr "✅ Active file changed: {path}"
+
+#: menu\commands\concrete_command.py:84
+msgid "elemen_omitidos"
+msgstr "items omitted"
+
+#: menu\commands\concrete_command.py:105
+msgid "parrafos_mas"
+msgstr "paragraphs omitted"
+
+#: menu\commands\concrete_command.py:115
+msgid "tablas_mas"
+msgstr "tables omitted"
+
+#: menu\commands\detect_file_command.py:13
+msgid "ruta_entra"
+msgstr "📄 Enter the file path: "
+
+# Mensajes logger
+#: menu\commands\detect_file_command.py:15
+msgid "detector_no_ruta"
+msgstr "⚠️ No file path provided."
+
+#: menu\commands\detect_file_command.py:18
+msgid "bytes_entra"
+msgstr "🔢 How many header bytes do you want to read? (default: 8): "
+
+#: menu\commands\detect_file_command.py:30
+msgid "result_detector"
+msgstr "✅ Detection results:"
+
+#: menu\commands\detect_file_command.py:42
+msgid "detector_falla"
+msgstr "❌ Error detecting file type: {error}"
+
+#: menu\commands\docx_commands.py:10 menu\commands\docx_commands.py:24
+#: menu\commands\docx_commands.py:44
+msgid "docx_no_activo"
+msgstr "❌ No active DOCX document to process."
+
+#: menu\commands\docx_commands.py:29
+msgid "docx_no_datos"
+msgstr "⏳ Reading DOCX document…"
+
+#: menu\commands\docx_commands.py:35
+msgid "docx_stats_titulo"
+msgstr "📊 DOCX Document Statistics:"
+
+#: menu\commands\docx_commands.py:51
+msgid "docx_sin_metadata"
+msgstr "⚠️ No metadata found in the DOCX file."
+
+#: menu\commands\docx_commands.py:54
+msgid "docx_metadata_titulo"
+msgstr "📑 DOCX Document Metadata:"
+
+#: menu\commands\metadata_command.py:12
+#: menu\commands\read_content_command.py:13 menu\commands\stats_command.py:12
+msgid "sin_archivo_activo"
+msgstr "⚠️ No active file selected."
+
+#: menu\commands\metadata_command.py:22 menu\commands\spreadsheet_command.py:52
+msgid "error_no_soporta_metadatos"
+msgstr "❌ This document type does not support metadata."
+
+#: menu\commands\metadata_command.py:28
+msgid "metadatos_obtenidos"
+msgstr "📑 Metadata: "
+
+#: menu\commands\metadata_command.py:33 menu\commands\metadata_command.py:34
+msgid "error_lectura_metadatos"
+msgstr "❌ This document type does not support metadata"
+
+#: menu\commands\odf_commands.py:21 menu\commands\odf_commands.py:49
+#: menu\commands\odf_commands.py:73
+msgid "docs_no_activo"
+msgstr "❌ No active document to process"
+
+#: menu\commands\odf_commands.py:55
+msgid "docs_data_missing"
+msgstr "❌ First, read the document content."
+
+#: menu\commands\odf_commands.py:80 menu\commands\odf_commands.py:86
+msgid "odf_meta_error"
+msgstr "❌ Error generating ODF statistics: {error}"
+
+#: menu\commands\read_content_command.py:17
+msgid "tipo_no_soportado"
+msgstr "❌ Unsupported format: {mime_type}"
+
+#: menu\commands\read_content_command.py:30
+msgid "sin_parrafos"
+msgstr "paragraphs omitted"
+
+#: menu\commands\read_content_command.py:35
+#: menu\commands\read_content_command.py:36
+#, fuzzy
+msgid "error_lectura_contenido"
+msgstr "❌ Error building menu: {error}"
+
+#. TODO: Implementar lectura real de PPTX
+#: menu\commands\read_pptx_command.py:25
+msgid "pptx_lectura_no_disponible"
+msgstr "⚠️ Function unavailable"
+
+#: menu\commands\spreadsheet_command.py:13
+#: menu\commands\spreadsheet_command.py:40
+#, fuzzy
+msgid "error_no_documento_activo"
+msgstr "❌ Invalid menu passed to go_to"
+
+#: menu\commands\spreadsheet_command.py:25
+msgid "error_no_soporta_lectura"
+msgstr "❌ This document type does not support metadata."
+
+#: menu\commands\spreadsheet_command.py:31
+msgid "ods_leido"
+msgstr "✅ ODS document read: {hojas} sheets"
+
+#: menu\commands\spreadsheet_command.py:33
+#: menu\commands\spreadsheet_command.py:62
+msgid "ods_error"
+msgstr "❌ Error processing spreadsheet: {error}"
+
+#: menu\commands\spreadsheet_command.py:58
+msgid "ods_meta_ok"
+msgstr "✅ ODS document read: {hojas} sheets"
+
+#: menu\commands\stats_command.py:19
+msgid "contenido_no_cargado"
+msgstr "⏳ Reading OpenDocument…"
+
+#: menu\commands\stats_command.py:26
+msgid "stats_obtenidas"
+msgstr "📄 Statistics obtained"
+
+#: menu\commands\stats_command.py:30 menu\commands\stats_command.py:31
+#, fuzzy
+msgid "error_lectura_stats"
+msgstr "❌ Error building menu: {error}"
+
+#. Futuro: comandos específicos para archivos PPTX
+#. Opción 0: volver
+#. Espacio para pptx, xlsx, etc.
+#: menu\commands\submenu_command.py:14 menu\menus\detectors_menu.py:9
+#: menu\menus\docs_menu.py:15 menu\menus\docx_menu.py:15
+#: menu\menus\pptx_menu.py:11 menu\menus\tools_menu.py:41
+msgid "volver"
+msgstr "🔙 Back"
+
+#: menu\menus\detectors_menu.py:7 menu\menus\tools_menu.py:15
+msgid "detector"
+msgstr "🔎 Detectors"
+
+#: menu\menus\detectors_menu.py:8
+msgid "detec_info"
+msgstr "Detect file format from the header"
+
+#: menu\menus\docs_menu.py:11
+msgid "menu_docs"
+msgstr "📖 Documents"
+
+#: menu\menus\docs_menu.py:12
+msgid "docs_leer"
+msgstr "📄 Read content"
+
+#: menu\menus\docs_menu.py:13
+msgid "docs_stats"
+msgstr "📊 Get statistics"
+
+#: menu\menus\docs_menu.py:14
+msgid "docs_meta"
+msgstr "📑 Read metadata"
+
+#: menu\menus\docx_menu.py:11
+msgid "menu_docx"
+msgstr "🏠 Main Menu"
+
+#. Se asume que todos los documentos usan el mismo ReadContentCommand
+#: menu\menus\docx_menu.py:12 menu\menus\tools_menu.py:26
+msgid "leer_contenido"
+msgstr "📑 Read content"
+
+#: menu\menus\docx_menu.py:13
+msgid "obtener_stats"
+msgstr "📑 Read metadata"
+
+#: menu\menus\docx_menu.py:14
+msgid "leer_metadatos"
+msgstr "📑 Read metadata"
+
+# Menús
+#: menu\menus\main_menu.py:8
+msgid "menu_prin"
+msgstr "🏠 Main Menu"
+
+#: menu\menus\main_menu.py:9 menu\menus\tools_menu.py:13
+msgid "herramientas"
+msgstr "🛠 Tools"
+
+#: menu\menus\main_menu.py:10
+msgid "saludar"
+msgstr "👋 Greet"
+
+# Menús
+#: menu\menus\pptx_menu.py:7
+#, fuzzy
+msgid "menu_pptx"
+msgstr "🏠 Main Menu"
+
+#: menu\menus\tools_menu.py:31
+msgid "obtener_estadisticas"
+msgstr "📊 Get statistics"
+
+#: menu\menus\tools_menu.py:36
+msgid "obtener_metadatos"
+msgstr "📑 Read metadata"
+
+#~ msgid "error_bytes_tipo"
+#~ msgstr "❌ The number of bytes must be a positive integer."
+
+#~ msgid "volver_linea"
+#~ msgstr "Back"
+
+# Detector
+#~ msgid "detector_detectando"
+#~ msgstr "🛠 Detecting file format..."
